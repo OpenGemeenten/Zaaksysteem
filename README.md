@@ -1,6 +1,8 @@
 # Zaaksysteem Client
 
 [![Build Status](https://travis-ci.org/SimplyAdmire/Zaaksysteem.svg)](https://travis-ci.org/SimplyAdmire/Zaaksysteem)
+[![Code Climate](https://codeclimate.com/github/SimplyAdmire/Zaaksysteem/badges/gpa.svg)](https://codeclimate.com/github/SimplyAdmire/Zaaksysteem)
+[![Test Coverage](https://codeclimate.com/github/SimplyAdmire/Zaaksysteem/badges/coverage.svg)](https://codeclimate.com/github/SimplyAdmire/Zaaksysteem/coverage)
 
 This package is a PHP based client for Zaaksysteem (http://zaaksysteem.nl/). The client is standalone, meaning it does
 not depend on any PHP framework. Implementations for frameworks like Flow are planned and will be released as separate
