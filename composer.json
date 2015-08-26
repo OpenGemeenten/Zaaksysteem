@@ -1,0 +1,32 @@
+{
+    "name": "simplyadmire/zaaksysteem",
+    "description": "Zaaksysteem API Client",
+    "license": "MIT",
+    "keywords": ["zaaksysteem", "client"],
+    "authors": [
+        {
+            "name": "Rens Admiraal",
+            "email": "rens@simplyadmire.com"
+        }
+    ],
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": {
+            "SimplyAdmire\\Zaaksysteem\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "guzzlehttp/guzzle": "^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
