@@ -1,7 +1,8 @@
 <?php
 namespace SimplyAdmire\Zaaksysteem;
 
-use SimplyAdmire\Zaaksysteem\Exception\InvalidConfigurationException;
+use Assert\Assertion;
+use Assert\InvalidArgumentException;
 
 /**
  * This class contains the configuration of an API client object.
@@ -41,37 +42,25 @@ final class Configuration
 
     /**
      * @param array $configuration Array with configuration settings
-     * @throws InvalidConfigurationException
+     * @throws InvalidArgumentException
      */
     public function __construct(array $configuration)
     {
-        // Check if apiBaseUrl is set and valid
-        if (isset($configuration['apiBaseUrl'])) {
-            if (!filter_var($configuration['apiBaseUrl'], FILTER_VALIDATE_URL)) {
-                throw new InvalidConfigurationException(sprintf(
-                    'apiBaseUrl has to be a valid url, "%s" given',
-                    $configuration['apiBaseUrl']
-                ));
-            }
-
-            $this->apiBaseUrl = rtrim($configuration['apiBaseUrl'], '/');
-        } else {
-            throw new InvalidConfigurationException('No apiBaseUrl set');
-        }
+        // Validate and set base url
+        Assertion::notEmptyKey($configuration, 'apiBaseUrl', 'apiBaseUrl is required');
+        Assertion::url($configuration['apiBaseUrl'], 'apiBaseUrl has to be a valid url');
+        $this->apiBaseUrl = rtrim($configuration['apiBaseUrl'], '/');
 
         // Check if apiVersion is set and valid
         if (isset($configuration['apiVersion'])) {
-            if (!in_array((integer)$configuration['apiVersion'], [1])) {
-                throw new InvalidConfigurationException('Invalid apiVersion given');
-            }
+            Assertion::integer($configuration['apiVersion'], 'apiVersion has to be an integer');
+            Assertion::inArray($configuration['apiVersion'], [1], 'Invalid apiVersion');
             $this->apiVersion = (integer)$configuration['apiVersion'];
         }
 
         // Check if clientConfiguration is set and valid
         if (isset($configuration['clientConfiguration'])) {
-            if (!is_array($configuration['clientConfiguration'])) {
-                throw new InvalidConfigurationException('clientConfiguration has to be an array');
-            }
+            Assertion::isArray($configuration['clientConfiguration'], 'clientConfiguration has to be an array');
             $this->clientConfiguration = $configuration['clientConfiguration'];
         }
     }

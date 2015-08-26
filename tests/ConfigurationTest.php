@@ -9,8 +9,8 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     public function apiBaseUrlIsCorrectlyGeneratedDataProvider()
     {
         return [
-            ['http://foobar/', 'http://foobar/v1/'],
-            ['http://foobar', 'http://foobar/v1/']
+            ['http://foobar.com/', 'http://foobar.com/v1/'],
+            ['http://foobar.com', 'http://foobar.com/v1/']
         ];
     }
 
@@ -29,8 +29,8 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException \SimplyAdmire\Zaaksysteem\Exception\InvalidConfigurationException
-     * @expectedExceptionMessage apiBaseUrl has to be a valid url, "no valid url" given
+     * @expectedException \Assert\InvalidArgumentException
+     * @expectedExceptionMessage apiBaseUrl has to be a valid url
      */
     public function apiBaseUrlHasToValidateAsUrl()
     {
@@ -41,8 +41,8 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException \SimplyAdmire\Zaaksysteem\Exception\InvalidConfigurationException
-     * @expectedExceptionMessage No apiBaseUrl set
+     * @expectedException \Assert\InvalidArgumentException
+     * @expectedExceptionMessage apiBaseUrl
      */
     public function apiBaseUrlIsRequired()
     {
@@ -64,14 +64,14 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException \SimplyAdmire\Zaaksysteem\Exception\InvalidConfigurationException
-     * @expectedExceptionMessage Invalid apiVersion given
+     * @expectedException \Assert\InvalidArgumentException
+     * @expectedExceptionMessage apiVersion
      * @dataProvider invalidApiVersions
      */
     public function onlyValidApiVersionsAreAccepted($apiVersion)
     {
         new Configuration([
-            'apiBaseUrl' => 'http://foobar',
+            'apiBaseUrl' => 'http://foobar.com',
             'apiVersion' => $apiVersion
         ]);
     }
@@ -82,8 +82,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     public function validApiVersions()
     {
         return [
-            [1],
-            ['1']
+            [1]
         ];
     }
 
@@ -94,7 +93,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     public function validApiVersionsAreAccepted($apiVersion)
     {
         $configuration = new Configuration([
-            'apiBaseUrl' => 'http://foobar',
+            'apiBaseUrl' => 'http://foobar.com',
             'apiVersion' => $apiVersion
         ]);
 
@@ -103,13 +102,13 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException \SimplyAdmire\Zaaksysteem\Exception\InvalidConfigurationException
+     * @expectedException \Assert\InvalidArgumentException
      * @expectedExceptionMessage clientConfiguration has to be an array
      */
     public function clientConfigurationHasToBeAnArray()
     {
         new Configuration([
-            'apiBaseUrl' => 'http://foobar',
+            'apiBaseUrl' => 'http://foobar.com',
             'clientConfiguration' => 'no array'
         ]);
     }
@@ -121,7 +120,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     {
         $clientConfiguration = ['foo' => 'bar'];
         $configuration = new Configuration([
-            'apiBaseUrl' => 'http://foobar',
+            'apiBaseUrl' => 'http://foobar.com',
             'clientConfiguration' => $clientConfiguration
         ]);
 
