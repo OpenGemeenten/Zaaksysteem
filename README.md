@@ -1,5 +1,6 @@
 # Zaaksysteem Client
 
+[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/simplyadmire/zaaksysteem)
 This package is a PHP based client for Zaaksysteem (http://zaaksysteem.nl/). The client is standalone, meaning it does
 not depend on any PHP framework. Implementations for frameworks like Flow are planned and will be released as separate
 packages.
