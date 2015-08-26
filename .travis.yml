@@ -9,6 +9,7 @@ matrix:
   allow_failures:
   - php: 7.0
   - php: hhvm
+install: composer install --dev
 script:
 - bin/phpunit --coverage-text
 notifications:
