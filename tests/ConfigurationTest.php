@@ -2,10 +2,18 @@
 namespace SimplyAdmire\Zaaksysteem\Tests\Unit;
 
 use SimplyAdmire\Zaaksysteem\Configuration;
+use SimplyAdmire\Zaaksysteem\Tests\Unit\Helpers\ConfigurationHelperTrait;
+
+require_once(__DIR__ . '/Helpers/ConfigurationHelperTrait.php');
 
 class ConfigurationTest extends \PHPUnit_Framework_TestCase
 {
 
+    use ConfigurationHelperTrait;
+
+    /**
+     * @return array
+     */
     public function apiBaseUrlIsCorrectlyGeneratedDataProvider()
     {
         return [
@@ -20,9 +28,9 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
      */
     public function apiBaseUrlIsCorrectlyGenerated($source, $expected)
     {
-        $configuration = new Configuration([
-            'apiBaseUrl' => $source
-        ]);
+        $configuration = new Configuration(
+            $this->mergeConfigurationWithMinimalConfiguration(['apiBaseUrl' => $source])
+        );
 
         $this->assertEquals($expected, $configuration->getApiBaseUrl());
     }
@@ -34,9 +42,9 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
      */
     public function apiBaseUrlHasToValidateAsUrl()
     {
-        new Configuration([
-            'apiBaseUrl' => 'no valid url'
-        ]);
+        new Configuration(
+            $this->mergeConfigurationWithMinimalConfiguration(['apiBaseUrl' => 'no valid url'])
+        );
     }
 
     /**
@@ -46,7 +54,9 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
      */
     public function apiBaseUrlIsRequired()
     {
-        new Configuration([]);
+        $configurationArray = $this->mergeConfigurationWithMinimalConfiguration();
+        unset($configurationArray['apiBaseUrl']);
+        new Configuration($configurationArray);
     }
 
     /**
@@ -70,10 +80,9 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
      */
     public function onlyValidApiVersionsAreAccepted($apiVersion)
     {
-        new Configuration([
-            'apiBaseUrl' => 'http://foobar.com',
-            'apiVersion' => $apiVersion
-        ]);
+        new Configuration(
+            $this->mergeConfigurationWithMinimalConfiguration(['apiVersion' => $apiVersion])
+        );
     }
 
     /**
@@ -92,10 +101,9 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
      */
     public function validApiVersionsAreAccepted($apiVersion)
     {
-        $configuration = new Configuration([
-            'apiBaseUrl' => 'http://foobar.com',
-            'apiVersion' => $apiVersion
-        ]);
+        $configuration = new Configuration(
+            $this->mergeConfigurationWithMinimalConfiguration(['apiVersion' => $apiVersion])
+        );
 
         $this->assertNotEmpty($configuration->getApiBaseUrl());
     }
@@ -107,10 +115,9 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
      */
     public function clientConfigurationHasToBeAnArray()
     {
-        new Configuration([
-            'apiBaseUrl' => 'http://foobar.com',
-            'clientConfiguration' => 'no array'
-        ]);
+        new Configuration(
+            $this->mergeConfigurationWithMinimalConfiguration(['clientConfiguration' => 'no array'])
+        );
     }
 
     /**
@@ -119,12 +126,12 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     public function clientConfigurationIsSetAndRetrievedCorrectly()
     {
         $clientConfiguration = ['foo' => 'bar'];
-        $configuration = new Configuration([
-            'apiBaseUrl' => 'http://foobar.com',
-            'clientConfiguration' => $clientConfiguration
-        ]);
+        $configuration = new Configuration(
+            $this->mergeConfigurationWithMinimalConfiguration(['clientConfiguration' => $clientConfiguration])
+        );
 
         $this->assertEquals($clientConfiguration, $configuration->getClientConfiguration());
     }
 
+//    public function usernameIsRequired()
 }

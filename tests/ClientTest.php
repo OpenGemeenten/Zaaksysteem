@@ -4,9 +4,14 @@ namespace SimplyAdmire\Zaaksysteem\Tests\Unit;
 use SimplyAdmire\Zaaksysteem\Client;
 use SimplyAdmire\Zaaksysteem\Configuration;
 use GuzzleHttp\ClientInterface as HttpClientInterface;
+use SimplyAdmire\Zaaksysteem\Tests\Unit\Helpers\ConfigurationHelperTrait;
+
+require_once(__DIR__ . '/Helpers/ConfigurationHelperTrait.php');
 
 class ClientTest extends \PHPUnit_Framework_TestCase
 {
+
+    use ConfigurationHelperTrait;
 
     /**
      * @test
@@ -15,9 +20,9 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     {
         $mockGuzzleClient = $this->getMock('GuzzleHttp\Client');
 
-        $configuration = new Configuration([
-            'apiBaseUrl' => 'http://foo.bar/'
-        ]);
+        $configuration = new Configuration(
+            $this->mergeConfigurationWithMinimalConfiguration()
+        );
 
         $client = new Client($configuration, $mockGuzzleClient);
         $reflectionObject = new \ReflectionObject($client);
@@ -32,9 +37,9 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function clientCreatesOwnHttpClientIfNoneIsPassedToConstructor()
     {
-        $configuration = new Configuration([
-            'apiBaseUrl' => 'http://foo.bar/'
-        ]);
+        $configuration = new Configuration(
+            $this->mergeConfigurationWithMinimalConfiguration()
+        );
 
         $client = new Client($configuration);
         $reflectionObject = new \ReflectionObject($client);
@@ -64,11 +69,10 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function clientConfigurationIsPassedToHttpClient($verify)
     {
+        $configurationArray = $this->mergeConfigurationWithMinimalConfiguration();
         $clientConfiguration = ['verify' => $verify];
-        $configuration = new Configuration([
-            'apiBaseUrl' => 'http://foo.bar/',
-            'clientConfiguration' => $clientConfiguration
-        ]);
+        $configurationArray['clientConfiguration'] = $clientConfiguration;
+        $configuration = new Configuration($configurationArray);
 
         $client = new Client($configuration);
         $reflectionObject = new \ReflectionObject($client);
@@ -84,14 +88,14 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function pathIsCorrectlyAppendedToApiBaseUri()
     {
-        $configuration = new Configuration([
-            'apiBaseUrl' => 'http://foo.bar/'
-        ]);
+        $configuration = new Configuration(
+            $this->mergeConfigurationWithMinimalConfiguration()
+        );
 
         $mockGuzzleClient = $this->getMock('GuzzleHttp\Client', ['request']);
         $mockGuzzleClient->expects($this->once())
             ->method('request')
-            ->with('GET', 'http://foo.bar/v1/path');
+            ->with('GET', 'http://foobar.com/v1/path');
 
         $client = new Client($configuration, $mockGuzzleClient);
         $client->doRequest('GET', 'path');

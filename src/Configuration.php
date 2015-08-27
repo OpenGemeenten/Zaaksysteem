@@ -41,6 +41,20 @@ final class Configuration
     private $clientConfiguration = [];
 
     /**
+     * The API key configured in Zaaksysteem
+     *
+     * @var string
+     */
+    private $apiKey;
+
+    /**
+     * The username configured in Zaaksysteem
+     *
+     * @var string
+     */
+    private $username;
+
+    /**
      * @param array $configuration Array with configuration settings
      * @throws InvalidArgumentException
      */
@@ -50,6 +64,16 @@ final class Configuration
         Assertion::notEmptyKey($configuration, 'apiBaseUrl', 'apiBaseUrl is required');
         Assertion::url($configuration['apiBaseUrl'], 'apiBaseUrl has to be a valid url');
         $this->apiBaseUrl = rtrim($configuration['apiBaseUrl'], '/');
+
+        // Validate username
+        Assertion::notEmptyKey($configuration, 'username', 'username is required');
+        Assertion::string($configuration['username'], 'username has to be a string');
+        $this->username = trim($configuration['username']);
+
+        // Validate api key
+        Assertion::notEmptyKey($configuration, 'apiKey', 'apiKey is required');
+        Assertion::string($configuration['apiKey'], 'apiKey has to be a string');
+        $this->apiKey = trim($configuration['apiKey']);
 
         // Check if apiVersion is set and valid
         if (isset($configuration['apiVersion'])) {
