@@ -99,27 +99,11 @@ final class Configuration
     }
 
     /**
-     * @param string $apiKey
-     */
-    public function setApiKey($apiKey)
-    {
-        $this->apiKey = $apiKey;
-    }
-
-    /**
      * @return string
      */
     public function getUsername()
     {
         return $this->username;
-    }
-
-    /**
-     * @param string $username
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
     }
 
 }
