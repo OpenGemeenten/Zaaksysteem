@@ -34,6 +34,66 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
+     * @expectedException \SimplyAdmire\Zaaksysteem\Exception\RequestException
+     */
+    public function clientThrowsExceptionIfResponseIsNoResponseObject()
+    {
+        $mockException = $this->getMock('Exception');
+        $mockGuzzleClient = $this->getMock('GuzzleHttp\Client');
+        $mockGuzzleClient->expects($this->once())
+            ->method('request')
+            ->will($this->throwException($mockException));
+
+        $configuration = new Configuration(
+            $this->mergeConfigurationWithMinimalConfiguration()
+        );
+
+        $client = new Client($configuration, $mockGuzzleClient);
+        $client->request('GET', 'foo');
+    }
+
+    /**
+     * @test
+     * @expectedException \SimplyAdmire\Zaaksysteem\Exception\RequestException
+     */
+    public function clientThrowsExceptionIfTheRequestFails()
+    {
+        $mockException = $this->getMock('GuzzleHttp\Exception\TransferException');
+        $mockGuzzleClient = $this->getMock('GuzzleHttp\Client');
+        $mockGuzzleClient->expects($this->once())
+            ->method('request')
+            ->will($this->throwException($mockException));
+
+        $configuration = new Configuration(
+            $this->mergeConfigurationWithMinimalConfiguration()
+        );
+
+        $client = new Client($configuration, $mockGuzzleClient);
+        $client->request('GET', 'foo');
+    }
+
+    /**
+     * @test
+     * @expectedException \SimplyAdmire\Zaaksysteem\Exception\ResponseException
+     */
+    public function clientThrowsExceptionIfTheResponseIsInvalid()
+    {
+        $mockException = $this->getMock('Assert\InvalidArgumentException', [], [], '', false);
+        $mockGuzzleClient = $this->getMock('GuzzleHttp\Client');
+        $mockGuzzleClient->expects($this->once())
+            ->method('request')
+            ->will($this->throwException($mockException));
+
+        $configuration = new Configuration(
+            $this->mergeConfigurationWithMinimalConfiguration()
+        );
+
+        $client = new Client($configuration, $mockGuzzleClient);
+        $client->request('GET', 'foo');
+    }
+
+    /**
+     * @test
      */
     public function clientCreatesOwnHttpClientIfNoneIsPassedToConstructor()
     {
