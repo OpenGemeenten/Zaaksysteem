@@ -13,22 +13,64 @@ This package is a PHP based client for Zaaksysteem (http://zaaksysteem.nl/). The
 not depend on any PHP framework. Implementations for frameworks like Flow are planned and will be released as separate
 packages.
 
-# Getting Started
+# Supported API's
 
-## Zaaksysteem API
+## Object (https://zaaksysteem.url/man/Zaaksysteem::Manual::API::Object)
 
-The client is written to connect to the "Zaaksysteem API" meaning you will have to configure this API in Zaaksysteem.
-For all the details about configuring Zaaksysteem we point you to the official documentation and support channels
-of Zaaksysteem. But as a quick start you can follow the steps below to configure the bare requirements for this client:
+For this API you have to configure an "Extern Koppelprofiel" in your Zaaksysteem instance.
 
-* Log in to Zaaksysteem
-* Click the "Gear icon" in the top right corner of the screen
-* Click "Koppelingen"
-* Click the "Configuratie" "Gear icon" which is in the top right corner below the other "Gear icon"
-* Click "Configuratiescherm"
-* Click the "+" icon on the right of the screen, and select "Voeg koppeling toe"
-* Select the "Zaaksysteem API" module, give it a name and click "Voeg koppeling toe"
+Implemented methods:
 
-You can now configure the module, for the configuration you need the "API Sleutel" (which you can generate yourself)
-and the displayed "API URI" which is displayed in the module configuration. Remember to remove the version suffix from
-the API URI as the client will add this automatically.
+- [ ] get
+- [ ] list
+
+## V1 (https://zaaksysteem.url/man/Zaaksysteem::Manual::API::V1)
+
+For this API you have to configure an "Zaaksysteem API" in your Zaaksysteem instance.
+
+Below you can find the implemented methods per API:
+
+### Case
+
+- [ ] get
+- [ ] list
+- [ ] create
+- [ ] update
+- [ ] transition
+- [ ] prepare file
+
+### Case\Document
+
+- [ ] get
+- [ ] list
+- [ ] download file
+
+### Case\CaseType
+ 
+- [ ] get
+- [ ] list
+
+### Case\ControlPanel
+
+- [ ] get
+- [ ] list
+- [ ] create
+- [ ] update
+
+### Case\Host
+
+- [ ] get
+- [ ] list
+- [ ] create
+- [ ] update
+
+### Case\Instance
+
+- [ ] get
+- [ ] list
+- [ ] create
+- [ ] update
+
+### Case\Subject
+
+- [ ] create
