@@ -1,8 +1,8 @@
 <?php
-namespace SimplyAdmire\Zaaksysteem\Tests\Unit;
+namespace SimplyAdmire\Zaaksysteem\Tests\Unit\V1;
 
-use SimplyAdmire\Zaaksysteem\Client;
-use SimplyAdmire\Zaaksysteem\Configuration;
+use SimplyAdmire\Zaaksysteem\V1\Client;
+use SimplyAdmire\Zaaksysteem\V1\Configuration;
 use GuzzleHttp\ClientInterface as HttpClientInterface;
 use SimplyAdmire\Zaaksysteem\Tests\Unit\Helpers\ConfigurationHelperTrait;
 
@@ -95,10 +95,15 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $mockGuzzleClient = $this->getMock('GuzzleHttp\Client', ['request']);
         $mockGuzzleClient->expects($this->once())
             ->method('request')
-            ->with('GET', 'http://foobar.com/v1/path');
+            ->with('GET', 'http://foobar.com/v1/path')
+            ->will($this->returnValue(null));
 
         $client = new Client($configuration, $mockGuzzleClient);
-        $client->doRequest('GET', 'path');
+        try {
+            $client->request('GET', 'path');
+        } catch (\Exception $exception) {
+            // We expect an exception as the client will not be able to return a valid request
+        }
     }
 
 }

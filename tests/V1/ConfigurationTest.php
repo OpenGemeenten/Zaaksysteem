@@ -1,7 +1,7 @@
 <?php
-namespace SimplyAdmire\Zaaksysteem\Tests\Unit;
+namespace SimplyAdmire\Zaaksysteem\Tests\Unit\V1;
 
-use SimplyAdmire\Zaaksysteem\Configuration;
+use SimplyAdmire\Zaaksysteem\V1\Configuration;
 use SimplyAdmire\Zaaksysteem\Tests\Unit\Helpers\ConfigurationHelperTrait;
 
 require_once(__DIR__ . '/Helpers/ConfigurationHelperTrait.php');
@@ -60,55 +60,6 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return array
-     */
-    public function invalidApiVersions()
-    {
-        return [
-            [0],
-            [2],
-            ['3'],
-            ['foo bar']
-        ];
-    }
-
-    /**
-     * @test
-     * @expectedException \Assert\InvalidArgumentException
-     * @expectedExceptionMessage apiVersion
-     * @dataProvider invalidApiVersions
-     */
-    public function onlyValidApiVersionsAreAccepted($apiVersion)
-    {
-        new Configuration(
-            $this->mergeConfigurationWithMinimalConfiguration(['apiVersion' => $apiVersion])
-        );
-    }
-
-    /**
-     * @return array
-     */
-    public function validApiVersions()
-    {
-        return [
-            [1]
-        ];
-    }
-
-    /**
-     * @test
-     * @dataProvider validApiVersions
-     */
-    public function validApiVersionsAreAccepted($apiVersion)
-    {
-        $configuration = new Configuration(
-            $this->mergeConfigurationWithMinimalConfiguration(['apiVersion' => $apiVersion])
-        );
-
-        $this->assertNotEmpty($configuration->getApiBaseUrl());
-    }
-
-    /**
      * @test
      * @expectedException \Assert\InvalidArgumentException
      * @expectedExceptionMessage clientConfiguration has to be an array
@@ -133,5 +84,4 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($clientConfiguration, $configuration->getClientConfiguration());
     }
 
-//    public function usernameIsRequired()
 }

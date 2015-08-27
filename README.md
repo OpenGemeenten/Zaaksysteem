@@ -30,4 +30,5 @@ of Zaaksysteem. But as a quick start you can follow the steps below to configure
 * Select the "Zaaksysteem API" module, give it a name and click "Voeg koppeling toe"
 
 You can now configure the module, for the configuration you need the "API Sleutel" (which you can generate yourself)
-and the displayed "API URI" which is displayed in the module configuration.
+and the displayed "API URI" which is displayed in the module configuration. Remember to remove the version suffix from
+the API URI as the client will add this automatically.

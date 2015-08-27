@@ -1,5 +1,5 @@
 <?php
-namespace SimplyAdmire\Zaaksysteem;
+namespace SimplyAdmire\Zaaksysteem\V1;
 
 use Assert\Assertion;
 use Assert\InvalidArgumentException;
@@ -13,18 +13,10 @@ use Assert\InvalidArgumentException;
  *
  * Optional settings:
  *
- * - apiVersion (validated on being a valid API version, now only 1 exists)
  * - clientConfiguration (an array that is passed as configuration to the guzzle client)
  */
 final class Configuration
 {
-
-    /**
-     * The version of the API to use
-     *
-     * @var integer
-     */
-    private $apiVersion = 1;
 
     /**
      * The base URI of the API
@@ -75,13 +67,6 @@ final class Configuration
         Assertion::string($configuration['apiKey'], 'apiKey has to be a string');
         $this->apiKey = trim($configuration['apiKey']);
 
-        // Check if apiVersion is set and valid
-        if (isset($configuration['apiVersion'])) {
-            Assertion::integer($configuration['apiVersion'], 'apiVersion has to be an integer');
-            Assertion::inArray($configuration['apiVersion'], [1], 'Invalid apiVersion');
-            $this->apiVersion = (integer)$configuration['apiVersion'];
-        }
-
         // Check if clientConfiguration is set and valid
         if (isset($configuration['clientConfiguration'])) {
             Assertion::isArray($configuration['clientConfiguration'], 'clientConfiguration has to be an array');
@@ -102,7 +87,39 @@ final class Configuration
      */
     public function getApiBaseUrl()
     {
-        return sprintf('%s/v%s/', $this->apiBaseUrl, $this->apiVersion);
+        return sprintf('%s/v1/', $this->apiBaseUrl);
+    }
+
+    /**
+     * @return string
+     */
+    public function getApiKey()
+    {
+        return $this->apiKey;
+    }
+
+    /**
+     * @param string $apiKey
+     */
+    public function setApiKey($apiKey)
+    {
+        $this->apiKey = $apiKey;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param string $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
     }
 
 }
