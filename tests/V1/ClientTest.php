@@ -166,4 +166,34 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         }
     }
 
+    /**
+     * @test
+     */
+    public function requestIsExecutedCorrectly()
+    {
+        $mockBody = $this->getMock('stdClass', ['getContents']);
+        $mockBody->expects($this->once())
+            ->method('getContents')
+            ->will($this->returnValue(file_get_contents(__DIR__ . '/Fixtures/Responses/casetype.json')));
+        $mockResponse = $this->getMock('\GuzzleHttp\Psr7\Response');
+        $mockResponse->expects($this->once())
+            ->method('getBody')
+            ->will($this->returnValue($mockBody));
+
+        $mockGuzzleClient = $this->getMock('GuzzleHttp\Client', ['request']);
+        $mockGuzzleClient->expects($this->once())
+            ->method('request')
+            ->with('GET', 'http://foobar.com/v1/path')
+            ->will($this->returnValue($mockResponse));
+
+        $configuration = new Configuration(
+            $this->mergeConfigurationWithMinimalConfiguration()
+        );
+
+        $client = new Client($configuration, $mockGuzzleClient);
+        $result = $client->request('GET', 'path');
+
+        $this->assertArrayHasKey('pager', $result);
+    }
+
 }
