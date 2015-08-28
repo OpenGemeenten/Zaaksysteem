@@ -38,7 +38,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function clientThrowsExceptionIfResponseIsNoResponseObject()
     {
-        $mockException = $this->getMock('Exception');
+        $mockException = $this->getMock('Exception', ['getMessage']);
         $mockGuzzleClient = $this->getMock('GuzzleHttp\Client');
         $mockGuzzleClient->expects($this->once())
             ->method('request')
@@ -58,7 +58,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function clientThrowsExceptionIfTheRequestFails()
     {
-        $mockException = $this->getMock('GuzzleHttp\Exception\TransferException');
+        $mockException = $this->getMock('GuzzleHttp\Exception\TransferException', ['getMessage']);
         $mockGuzzleClient = $this->getMock('GuzzleHttp\Client');
         $mockGuzzleClient->expects($this->once())
             ->method('request')
@@ -78,7 +78,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function clientThrowsExceptionIfTheResponseIsInvalid()
     {
-        $mockException = $this->getMock('Assert\InvalidArgumentException', [], [], '', false);
+        $mockException = $this->getMock('Assert\InvalidArgumentException', ['getMessage'], [], '', false);
         $mockGuzzleClient = $this->getMock('GuzzleHttp\Client');
         $mockGuzzleClient->expects($this->once())
             ->method('request')
