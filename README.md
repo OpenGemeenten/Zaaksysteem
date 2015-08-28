@@ -17,7 +17,8 @@ packages.
 
 ## Object
 
-Manual: https://zaaksysteem.url/man/Zaaksysteem::Manual::API::Object
+Manual: https://zaaksysteem.url/man/Zaaksysteem::Manual::API::Object.
+
 For this API you have to configure an "Extern Koppelprofiel" in your Zaaksysteem instance.
 
 Implemented methods:
@@ -27,7 +28,8 @@ Implemented methods:
 
 ## V1
 
-Manual: https://zaaksysteem.url/man/Zaaksysteem::Manual::API::V1
+Manual: https://zaaksysteem.url/man/Zaaksysteem::Manual::API::V1.
+
 For this API you have to configure an "Zaaksysteem API" in your Zaaksysteem instance.
 
 Below you can find the implemented methods per API:
