@@ -30,7 +30,7 @@ class PagedResultTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->mockClient = $this->getMock('SimplyAdmire\Zaaksysteem\V1\Client', [], [], '', false);
-        $responseArray = json_decode(file_get_contents(__DIR__ . '/Fixtures/Responses/casetype.json'), true);
+        $responseArray = json_decode(file_get_contents(__DIR__ . '/Fixtures/Responses/CaseType/page.json'), true);
 
         for ($page = 1; $page <= 12; $page++) {
             $this->mockClient->expects($this->any())

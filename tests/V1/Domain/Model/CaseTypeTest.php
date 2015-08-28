@@ -11,7 +11,7 @@ class CaseTypeTest extends \PHPUnit_Framework_TestCase
      */
     public function modelConstructsCorrectly()
     {
-        $responseBody = json_decode(file_get_contents(__DIR__ . '/../../Fixtures/Responses/casetype.json'), true);
+        $responseBody = json_decode(file_get_contents(__DIR__ . '/../../Fixtures/Responses/CaseType/page.json'), true);
         $data = $responseBody['result']['instance']['rows'][0]['instance'];
         $model = new CaseType($data);
 

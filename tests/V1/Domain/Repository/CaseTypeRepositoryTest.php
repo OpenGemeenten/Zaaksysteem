@@ -24,7 +24,7 @@ class CaseTypeRepositoryTest extends \PHPUnit_Framework_TestCase
         $mockBody = $this->getMock('stdClass', ['getContents']);
         $mockBody->expects($this->once())
             ->method('getContents')
-            ->will($this->returnValue(file_get_contents(__DIR__ . '/../../Fixtures/Responses/casetype.json')));
+            ->will($this->returnValue(file_get_contents(__DIR__ . '/../../Fixtures/Responses/CaseType/page.json')));
         $mockResponse = $this->getMock('\GuzzleHttp\Psr7\Response');
         $mockResponse->expects($this->once())
             ->method('getBody')
