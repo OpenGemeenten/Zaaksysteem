@@ -13,6 +13,25 @@ This package is a PHP based client for Zaaksysteem (http://zaaksysteem.nl/). The
 not depend on any PHP framework. Implementations for frameworks like Flow are planned and will be released as separate
 packages.
 
+# Usage
+
+```php
+use SimplyAdmire\Zaaksysteem\V1\Configuration;
+use SimplyAdmire\Zaaksysteem\V1\Client;
+use SimplyAdmire\Zaaksysteem\V1\Domain\Repository\CaseTypeRepository;
+
+$configuration = new Configuration([
+    'username' => '<username>',
+    'apiBaseUrl' => '<api base url excluding version prefix>',
+    'apiKey' => '<api key>'
+]);
+
+$client = new Client($configuration);
+$repository = new CaseTypeRepository($client);
+
+$caseTypes = $repository->findAll();
+```
+
 # Supported API's
 
 ## Object
