@@ -3,12 +3,13 @@ namespace SimplyAdmire\Zaaksysteem\Tests\Unit\V1\Domain\Repository;
 
 use SimplyAdmire\Zaaksysteem\Tests\Unit\Helpers\ConfigurationHelperTrait;
 use SimplyAdmire\Zaaksysteem\V1\Client;
+use SimplyAdmire\Zaaksysteem\V1\Domain\Model\CaseModel;
 use SimplyAdmire\Zaaksysteem\V1\Domain\Model\CaseType;
-use SimplyAdmire\Zaaksysteem\V1\Domain\Repository\CaseTypeRepository;
+use SimplyAdmire\Zaaksysteem\V1\Domain\Repository\CaseRepository;
 
 require_once(__DIR__ . '/../../Helpers/ConfigurationHelperTrait.php');
 
-class CaseTypeRepositoryTest extends \PHPUnit_Framework_TestCase
+class CaseRepositoryTest extends \PHPUnit_Framework_TestCase
 {
 
     use ConfigurationHelperTrait;
@@ -18,17 +19,17 @@ class CaseTypeRepositoryTest extends \PHPUnit_Framework_TestCase
      */
     public function findAllReturnsFilledPagedResult()
     {
-        $response = json_decode(file_get_contents(__DIR__ . '/../../Fixtures/Responses/CaseType/page.json'), true);
+        $response = json_decode(file_get_contents(__DIR__ . '/../../Fixtures/Responses/Case/page.json'), true);
 
         $mockClient = $this->getMock(Client::class, ['request'], [], '', false);
         $mockClient->expects($this->any())
             ->method('request')
             ->will($this->returnValue($response['result']['instance']));
 
-        $repository = new CaseTypeRepository($mockClient);
+        $repository = new CaseRepository($mockClient);
 
         $result = $repository->findAll();
-        $this->assertEquals(118, $result->count());
+        $this->assertEquals(1, $result->count());
     }
 
     /**
@@ -37,7 +38,7 @@ class CaseTypeRepositoryTest extends \PHPUnit_Framework_TestCase
     public function findOneByIdentifierReturnsModel()
     {
         $identifier = '0123456789-abcdef';
-        $response = json_decode(file_get_contents(__DIR__ . '/../../Fixtures/Responses/CaseType/casetype.json'), true);
+        $response = json_decode(file_get_contents(__DIR__ . '/../../Fixtures/Responses/Case/case.json'), true);
         $response['result']['instance']['id'] = $identifier;
 
         $mockClient = $this->getMock(Client::class, ['request'], [], '', false);
@@ -45,10 +46,10 @@ class CaseTypeRepositoryTest extends \PHPUnit_Framework_TestCase
             ->method('request')
             ->will($this->returnValue($response['result']['instance']));
 
-        $repository = new CaseTypeRepository($mockClient);
+        $repository = new CaseRepository($mockClient);
 
         $result = $repository->findOneByIdentifier($identifier);
-        $this->assertInstanceOf(CaseType::class, $result);
+        $this->assertInstanceOf(CaseModel::class, $result);
         $this->assertEquals($identifier, $result->getId());
     }
 

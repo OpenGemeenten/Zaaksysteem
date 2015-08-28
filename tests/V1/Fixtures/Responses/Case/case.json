@@ -1,0 +1,40 @@
+{
+    "api_version": 1,
+    "request_id": "foo_bar_1a2676--fe1396",
+    "result": {
+        "instance": {
+            "attributes": {
+                "checkbox_agreed": [
+                    null
+                ],
+                "test_comment": [
+                    "This is a comment"
+                ],
+                "test_conclusion": [
+                    null
+                ],
+                "test_decision": [
+                    null
+                ],
+                "test_paspoort": [
+                    null
+                ]
+            },
+            "casetype": {
+                "reference": "789456-123456789-fedcba",
+                "type": "casetype"
+            },
+            "date_of_registration": "2015-08-07T10:59:34Z",
+            "date_target": "2015-09-18T10:59:34Z",
+            "id": "123456-abcdef-7890123",
+            "number": 1,
+            "phase": "lorem ipsum",
+            "result": null,
+            "status": "lorem ipsum",
+            "subject_external": null
+        },
+        "reference": "123456-abcdef-7890123",
+        "type": "case"
+    },
+    "status_code": 200
+}

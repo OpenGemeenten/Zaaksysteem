@@ -55,8 +55,8 @@ Below you can find the implemented methods per API:
 
 ### Case
 
-- [ ] get
-- [ ] list
+- [x] get
+- [x] list
 - [ ] create
 - [ ] update
 - [ ] transition
