@@ -3,7 +3,7 @@ namespace SimplyAdmire\Zaaksysteem\V1\Domain\Repository;
 
 use SimplyAdmire\Zaaksysteem\V1\Client;
 use SimplyAdmire\Zaaksysteem\V1\Domain\Model\CaseType;
-use SimplyAdmire\Zaaksysteem\PagedResult;
+use SimplyAdmire\Zaaksysteem\V1\PagedResult;
 
 final class CaseTypeRepository
 {

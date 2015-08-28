@@ -2,12 +2,12 @@
 namespace SimplyAdmire\Zaaksysteem\Tests\Unit;
 
 use Closure;
-use SimplyAdmire\Zaaksysteem\PagedResult;
+use SimplyAdmire\Zaaksysteem\V1\PagedResult;
 use SimplyAdmire\Zaaksysteem\Tests\Unit\Helpers\ConfigurationHelperTrait;
 use SimplyAdmire\Zaaksysteem\V1\Client;
 
-require_once(__DIR__ . '/V1/Helpers/ConfigurationHelperTrait.php');
-require_once(__DIR__ . '/Fixtures/DummyModel.php');
+require_once(__DIR__ . '/../V1/Helpers/ConfigurationHelperTrait.php');
+require_once(__DIR__ . '/../Fixtures/DummyModel.php');
 
 class PagedResultTest extends \PHPUnit_Framework_TestCase
 {
@@ -30,7 +30,7 @@ class PagedResultTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->mockClient = $this->getMock('SimplyAdmire\Zaaksysteem\V1\Client', [], [], '', false);
-        $responseArray = json_decode(file_get_contents(__DIR__ . '/V1/Fixtures/Responses/casetype.json'), true);
+        $responseArray = json_decode(file_get_contents(__DIR__ . '/Fixtures/Responses/casetype.json'), true);
 
         for ($page = 1; $page <= 12; $page++) {
             $this->mockClient->expects($this->any())

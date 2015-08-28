@@ -1,8 +1,9 @@
 <?php
-namespace SimplyAdmire\Zaaksysteem;
+namespace SimplyAdmire\Zaaksysteem\V1;
 
 use Iterator;
-use SimplyAdmire\Zaaksysteem\V1\Client;
+use SimplyAdmire\Zaaksysteem\Exception\RequestException;
+use SimplyAdmire\Zaaksysteem\Exception\ResponseException;
 
 class PagedResult implements Iterator
 {
@@ -41,8 +42,8 @@ class PagedResult implements Iterator
      * @param Client $client
      * @param string $itemClassName
      * @param string $path
-     * @throws Exception\RequestException
-     * @throws Exception\ResponseException
+     * @throws RequestException
+     * @throws ResponseException
      */
     public function __construct(Client $client, $itemClassName, $path)
     {
@@ -78,8 +79,8 @@ class PagedResult implements Iterator
 
     /**
      * @return object
-     * @throws Exception\RequestException
-     * @throws Exception\ResponseException
+     * @throws RequestException
+     * @throws ResponseException
      */
     public function current()
     {
