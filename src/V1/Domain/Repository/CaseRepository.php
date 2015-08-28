@@ -1,39 +1,20 @@
 <?php
 namespace SimplyAdmire\Zaaksysteem\V1\Domain\Repository;
 
-use SimplyAdmire\Zaaksysteem\V1\Client;
 use SimplyAdmire\Zaaksysteem\V1\Domain\Model\CaseModel;
-use SimplyAdmire\Zaaksysteem\V1\PagedResult;
 
-final class CaseRepository
+final class CaseRepository extends AbstractRepository
 {
 
     /**
-     * @var Client
+     * @var string
      */
-    private $client;
+    protected $modelClassName = 'SimplyAdmire\\Zaaksysteem\\V1\\Domain\\Model\\CaseModel';
 
     /**
-     * @param Client $client
+     * @var string
      */
-    public function __construct(Client $client)
-    {
-        $this->client = $client;
-    }
-
-    /**
-     * @return PagedResult
-     */
-    public function findAll()
-    {
-        $result = new PagedResult(
-            $this->client,
-            'SimplyAdmire\\Zaaksysteem\\V1\\Domain\\Model\\CaseModel',
-            'case'
-        );
-
-        return $result;
-    }
+    protected $apiPath = 'case';
 
     /**
      * @param string $identifier
@@ -43,7 +24,6 @@ final class CaseRepository
      */
     public function findOneByIdentifier($identifier)
     {
-        $result = $this->client->request('GET', 'case/' . $identifier);
-        return new CaseModel($result);
+        return parent::findOneByIdentifier($identifier);
     }
 }

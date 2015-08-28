@@ -1,56 +1,38 @@
 <?php
 namespace SimplyAdmire\Zaaksysteem\Tests\Unit\V1\Domain\Repository;
 
-use SimplyAdmire\Zaaksysteem\Tests\Unit\Helpers\ConfigurationHelperTrait;
 use SimplyAdmire\Zaaksysteem\V1\Client;
 use SimplyAdmire\Zaaksysteem\V1\Domain\Model\CaseModel;
 use SimplyAdmire\Zaaksysteem\V1\Domain\Model\CaseType;
 use SimplyAdmire\Zaaksysteem\V1\Domain\Repository\CaseRepository;
 
-require_once(__DIR__ . '/../../Helpers/ConfigurationHelperTrait.php');
-
-class CaseRepositoryTest extends \PHPUnit_Framework_TestCase
+class CaseRepositoryTest extends AbstractRepositoryTest
 {
 
-    use ConfigurationHelperTrait;
+    /**
+     * @var string
+     */
+    protected $repositoryClassName = 'SimplyAdmire\\Zaaksysteem\\V1\\Domain\\Repository\\CaseRepository';
 
     /**
-     * @test
+     * @var string
      */
-    public function findAllReturnsFilledPagedResult()
+    protected $modelClassName = 'SimplyAdmire\\Zaaksysteem\\V1\\Domain\\Model\\CaseModel';
+
+    /**
+     * @return string
+     */
+    protected function getListFixturePath()
     {
-        $response = json_decode(file_get_contents(__DIR__ . '/../../Fixtures/Responses/Case/page.json'), true);
-
-        $mockClient = $this->getMock(Client::class, ['request'], [], '', false);
-        $mockClient->expects($this->any())
-            ->method('request')
-            ->will($this->returnValue($response['result']['instance']));
-
-        $repository = new CaseRepository($mockClient);
-
-        $result = $repository->findAll();
-        $this->assertEquals(1, $result->count());
+        return __DIR__ . '/../../Fixtures/Responses/Case/page.json';
     }
 
     /**
-     * @test
+     * @return string
      */
-    public function findOneByIdentifierReturnsModel()
+    protected function getDetailFixturePath()
     {
-        $identifier = '0123456789-abcdef';
-        $response = json_decode(file_get_contents(__DIR__ . '/../../Fixtures/Responses/Case/case.json'), true);
-        $response['result']['instance']['id'] = $identifier;
-
-        $mockClient = $this->getMock(Client::class, ['request'], [], '', false);
-        $mockClient->expects($this->any())
-            ->method('request')
-            ->will($this->returnValue($response['result']['instance']));
-
-        $repository = new CaseRepository($mockClient);
-
-        $result = $repository->findOneByIdentifier($identifier);
-        $this->assertInstanceOf(CaseModel::class, $result);
-        $this->assertEquals($identifier, $result->getId());
+        return __DIR__ . '/../../Fixtures/Responses/Case/case.json';
     }
 
 }
