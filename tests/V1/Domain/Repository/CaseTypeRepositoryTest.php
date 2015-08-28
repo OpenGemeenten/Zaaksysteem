@@ -14,43 +14,43 @@ class CaseTypeRepositoryTest extends \PHPUnit_Framework_TestCase
 
     use ConfigurationHelperTrait;
 
-    private $repository;
-
-    /**
-     * @return void
-     */
-    public function setUp()
-    {
-        $mockBody = $this->getMock('stdClass', ['getContents']);
-        $mockBody->expects($this->once())
-            ->method('getContents')
-            ->will($this->returnValue(file_get_contents(__DIR__ . '/../../Fixtures/Responses/CaseType/page.json')));
-        $mockResponse = $this->getMock('\GuzzleHttp\Psr7\Response');
-        $mockResponse->expects($this->once())
-            ->method('getBody')
-            ->will($this->returnValue($mockBody));
-
-        $mockGuzzleClient = $this->getMock('GuzzleHttp\Client', ['request']);
-        $mockGuzzleClient->expects($this->any())
-            ->method('request')
-            ->will($this->returnValue($mockResponse));
-
-        $configuration = new Configuration(
-            $this->mergeConfigurationWithMinimalConfiguration()
-        );
-
-        $client = new Client($configuration, $mockGuzzleClient);
-
-        $this->repository = new CaseTypeRepository($client);
-    }
-
     /**
      * @test
      */
     public function findAllReturnsFilledPagedResult()
     {
-        $result = $this->repository->findAll();
+        $response = json_decode(file_get_contents(__DIR__ . '/../../Fixtures/Responses/CaseType/page.json'), true);
+
+        $mockClient = $this->getMock(Client::class, ['request'], [], '', false);
+        $mockClient->expects($this->any())
+            ->method('request')
+            ->will($this->returnValue($response['result']['instance']));
+
+        $repository = new CaseTypeRepository($mockClient);
+
+        $result = $repository->findAll();
         $this->assertEquals(118, $result->count());
+    }
+
+    /**
+     * @test
+     */
+    public function findOneByIdentifierReturnsModel()
+    {
+        $identifier = '0123456789-abcdef';
+        $response = json_decode(file_get_contents(__DIR__ . '/../../Fixtures/Responses/CaseType/casetype.json'), true);
+        $response['result']['instance']['id'] = $identifier;
+
+        $mockClient = $this->getMock(Client::class, ['request'], [], '', false);
+        $mockClient->expects($this->any())
+            ->method('request')
+            ->will($this->returnValue($response['result']['instance']));
+
+        $repository = new CaseTypeRepository($mockClient);
+
+        $result = $repository->findOneByIdentifier($identifier);
+        $this->assertInstanceOf(CaseType::class, $result);
+        $this->assertEquals($identifier, $result->getId());
     }
 
 }

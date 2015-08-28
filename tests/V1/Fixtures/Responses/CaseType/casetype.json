@@ -1,0 +1,593 @@
+{
+   "api_version" : 1,
+   "request_id" : "foo_bar_1a2676--fe1396",
+   "result" : {
+      "instance" : {
+         "id" : "012345-abcdef-678901",
+         "phases" : [
+            {
+               "fields" : [
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : true,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : [
+                        {
+                           "active" : 1,
+                           "id" : 4495,
+                           "sort_order" : 0,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4496,
+                           "sort_order" : 1,
+                           "value" : "lorem ipsum"
+                        }
+                     ]
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : true,
+                     "required" : true,
+                     "type" : "lorem ipsum",
+                     "values" : [
+                        {
+                           "active" : 1,
+                           "id" : 4497,
+                           "sort_order" : 0,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4498,
+                           "sort_order" : 1,
+                           "value" : "lorem ipsum"
+                        }
+                     ]
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : true,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : [
+                        {
+                           "active" : 0,
+                           "id" : 4499,
+                           "sort_order" : 0,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 0,
+                           "id" : 4500,
+                           "sort_order" : 1,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4501,
+                           "sort_order" : 2,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4502,
+                           "sort_order" : 3,
+                           "value" : "lorem ipsum"
+                        }
+                     ]
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : true,
+                     "required" : true,
+                     "type" : "lorem ipsum",
+                     "values" : [
+                        {
+                           "active" : 1,
+                           "id" : 4486,
+                           "sort_order" : 0,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4487,
+                           "sort_order" : 1,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4488,
+                           "sort_order" : 2,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4489,
+                           "sort_order" : 3,
+                           "value" : "lorem ipsum"
+                        }
+                     ]
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : true,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : [
+                        {
+                           "active" : 1,
+                           "id" : 4490,
+                           "sort_order" : 0,
+                           "value" : "lorem ipsum"
+                        }
+                     ]
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : true,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  }
+               ],
+               "name" : "lorem ipsum",
+               "seq" : 1
+            },
+            {
+               "fields" : [
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  }
+               ],
+               "name" : "lorem ipsum",
+               "seq" : 2
+            },
+            {
+               "fields" : [
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : true,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : [
+                        {
+                           "active" : 1,
+                           "id" : 4697,
+                           "sort_order" : 0,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4698,
+                           "sort_order" : 1,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4699,
+                           "sort_order" : 2,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4700,
+                           "sort_order" : 3,
+                           "value" : "lorem ipsum"
+                        }
+                     ]
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : true,
+                     "required" : true,
+                     "type" : "lorem ipsum",
+                     "values" : [
+                        {
+                           "active" : 1,
+                           "id" : 4669,
+                           "sort_order" : 0,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4670,
+                           "sort_order" : 1,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4671,
+                           "sort_order" : 2,
+                           "value" : "lorem ipsum"
+                        }
+                     ]
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : true,
+                     "required" : true,
+                     "type" : "lorem ipsum",
+                     "values" : [
+                        {
+                           "active" : 1,
+                           "id" : 4675,
+                           "sort_order" : 0,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4676,
+                           "sort_order" : 1,
+                           "value" : "lorem ipsum"
+                        }
+                     ]
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : true,
+                     "required" : true,
+                     "type" : "lorem ipsum",
+                     "values" : [
+                        {
+                           "active" : 1,
+                           "id" : 4677,
+                           "sort_order" : 0,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4678,
+                           "sort_order" : 1,
+                           "value" : "lorem ipsum"
+                        }
+                     ]
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : true,
+                     "required" : true,
+                     "type" : "lorem ipsum",
+                     "values" : [
+                        {
+                           "active" : 1,
+                           "id" : 4679,
+                           "sort_order" : 0,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4680,
+                           "sort_order" : 1,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4681,
+                           "sort_order" : 2,
+                           "value" : "lorem ipsum"
+                        }
+                     ]
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : true,
+                     "required" : true,
+                     "type" : "lorem ipsum",
+                     "values" : [
+                        {
+                           "active" : 1,
+                           "id" : 4682,
+                           "sort_order" : 0,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4683,
+                           "sort_order" : 1,
+                           "value" : "lorem ipsum"
+                        }
+                     ]
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : true,
+                     "required" : true,
+                     "type" : "lorem ipsum",
+                     "values" : [
+                        {
+                           "active" : 1,
+                           "id" : 4684,
+                           "sort_order" : 0,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4685,
+                           "sort_order" : 1,
+                           "value" : "lorem ipsum"
+                        }
+                     ]
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : true,
+                     "required" : true,
+                     "type" : "lorem ipsum",
+                     "values" : [
+                        {
+                           "active" : 1,
+                           "id" : 4686,
+                           "sort_order" : 0,
+                           "value" : "lorem ipsum"
+                        },
+                        {
+                           "active" : 1,
+                           "id" : 4687,
+                           "sort_order" : 1,
+                           "value" : "lorem ipsum"
+                        }
+                     ]
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : true,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : true,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : true,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  },
+                  {
+                     "id" : "lorem ipsum",
+                     "label" : "lorem ipsum",
+                     "multiple_values" : false,
+                     "required" : false,
+                     "type" : "lorem ipsum",
+                     "values" : []
+                  }
+               ],
+               "name" : "lorem ipsum",
+               "seq" : 3
+            }
+         ],
+         "results" : [
+            {
+               "id" : 43,
+               "label" : "lorem ipsum",
+               "type" : "lorem ipsum"
+            },
+            {
+               "id" : 44,
+               "label" : "lorem ipsum",
+               "type" : "lorem ipsum"
+            }
+         ],
+         "sources" : [
+            "behandelaar",
+            "balie",
+            "telefoon",
+            "post",
+            "email",
+            "webformulier",
+            "sociale media"
+         ],
+         "title" : "lorem ipsum"
+      },
+      "reference" : "lorem ipsum",
+      "type" : "lorem ipsum"
+   },
+   "status_code" : 200
+}

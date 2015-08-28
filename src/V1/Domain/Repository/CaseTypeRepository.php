@@ -35,4 +35,15 @@ final class CaseTypeRepository
         return $result;
     }
 
+    /**
+     * @param string $identifier
+     * @return CaseType
+     * @throws \SimplyAdmire\Zaaksysteem\Exception\RequestException
+     * @throws \SimplyAdmire\Zaaksysteem\Exception\ResponseException
+     */
+    public function findOneByIdentifier($identifier)
+    {
+        $result = $this->client->request('GET', 'casetype/' . $identifier);
+        return new CaseType($result);
+    }
 }

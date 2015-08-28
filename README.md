@@ -51,7 +51,7 @@ Below you can find the implemented methods per API:
 
 ### Case\CaseType
  
-- [ ] get
+- [x] get
 - [x] list
 
 ### Case\ControlPanel
