@@ -1,6 +1,8 @@
 <?php
 namespace SimplyAdmire\Zaaksysteem\V1\Domain\Repository;
 
+use SimplyAdmire\Zaaksysteem\Exception\RequestException;
+use SimplyAdmire\Zaaksysteem\Exception\ResponseException;
 use SimplyAdmire\Zaaksysteem\V1\Client;
 use SimplyAdmire\Zaaksysteem\V1\Domain\Model\CaseModel;
 use SimplyAdmire\Zaaksysteem\V1\PagedResult;
@@ -48,8 +50,8 @@ abstract class AbstractRepository
     /**
      * @param string $identifier
      * @return object
-     * @throws \SimplyAdmire\Zaaksysteem\Exception\RequestException
-     * @throws \SimplyAdmire\Zaaksysteem\Exception\ResponseException
+     * @throws RequestException
+     * @throws ResponseException
      */
     public function findOneByIdentifier($identifier)
     {

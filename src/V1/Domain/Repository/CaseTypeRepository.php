@@ -1,6 +1,8 @@
 <?php
 namespace SimplyAdmire\Zaaksysteem\V1\Domain\Repository;
 
+use SimplyAdmire\Zaaksysteem\Exception\RequestException;
+use SimplyAdmire\Zaaksysteem\Exception\ResponseException;
 use SimplyAdmire\Zaaksysteem\V1\Domain\Model\CaseType;
 
 final class CaseTypeRepository extends AbstractRepository
@@ -19,8 +21,8 @@ final class CaseTypeRepository extends AbstractRepository
     /**
      * @param string $identifier
      * @return CaseType
-     * @throws \SimplyAdmire\Zaaksysteem\Exception\RequestException
-     * @throws \SimplyAdmire\Zaaksysteem\Exception\ResponseException
+     * @throws RequestException
+     * @throws ResponseException
      */
     public function findOneByIdentifier($identifier)
     {

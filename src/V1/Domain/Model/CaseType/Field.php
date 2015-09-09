@@ -46,8 +46,10 @@ final class Field
         $this->type = $data['type'];
 
         $this->values = new \SplObjectStorage();
-        foreach ($data['values'] as $value) {
-            $this->values->attach(new FieldValue($value));
+        if (isset($data['values']) && is_array($data['values'])) {
+            foreach ($data['values'] as $value) {
+                $this->values->attach(new FieldValue($value));
+            }
         }
     }
 

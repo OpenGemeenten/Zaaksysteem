@@ -28,9 +28,10 @@ final class Phase
         $this->sequence = $data['seq'];
 
         $this->fields = new \SplObjectStorage();
-
-        foreach ($data['fields'] as $value) {
-            $this->fields->attach(new Field($value));
+        if (isset($data['fields']) && is_array($data['fields'])) {
+            foreach ($data['fields'] as $value) {
+                $this->fields->attach(new Field($value));
+            }
         }
     }
 

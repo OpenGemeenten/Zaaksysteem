@@ -36,18 +36,24 @@ final class CaseType
         $this->id = $data['id'];
 
         $this->phases = new \SplObjectStorage();
-        foreach ($data['phases'] as $value) {
-            $this->phases->attach(new Phase($value));
+        if (isset($data['phases']) && is_array($data['phases'])) {
+            foreach ($data['phases'] as $value) {
+                $this->phases->attach(new Phase($value));
+            }
         }
 
         $this->results = new \SplObjectStorage();
-        foreach ($data['results'] as $value) {
-            $this->results->attach(new Result($value));
+        if (isset($data['results']) && is_array($data['results'])) {
+            foreach ($data['results'] as $value) {
+                $this->results->attach(new Result($value));
+            }
         }
 
         $this->sources = new \SplObjectStorage();
-        foreach ($data['sources'] as $value) {
-            $this->sources->attach(new Source($value));
+        if (isset($data['sources']) && is_array($data['sources'])) {
+            foreach ($data['sources'] as $value) {
+                $this->sources->attach(new Source($value));
+            }
         }
     }
 

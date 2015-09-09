@@ -73,8 +73,8 @@ class Client
      * @param string $path
      * @param array $options
      * @return array
-     * @throws RequestException
-     * @throws ResponseException
+     * @throws RequestException If the request fails
+     * @throws ResponseException If the response does not contain valid json / the expected structure
      */
     public function request($requestMethod, $path, array $options = [])
     {
