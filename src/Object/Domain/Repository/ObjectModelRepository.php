@@ -5,7 +5,7 @@ use SimplyAdmire\Zaaksysteem\Exception\RequestException;
 use SimplyAdmire\Zaaksysteem\Exception\ResponseException;
 use SimplyAdmire\Zaaksysteem\Object\Domain\Model\ObjectModel;
 
-final class ObjectRepository extends AbstractRepository {
+final class ObjectModelRepository extends AbstractRepository {
 
     /**
      * @var string
