@@ -1,0 +1,56 @@
+{
+  "at" : null,
+  "comment" : null,
+  "next" : null,
+  "num_rows" : 1,
+  "prev" : null,
+  "result" : [
+    {
+      "actions" : [
+        "read",
+        "write",
+        "manage",
+        "log",
+        "create_note"
+      ],
+      "date_created" : "2015-09-02T06:58:56Z",
+      "date_modified" : "2015-09-02T06:58:56Z",
+      "id" : "8ea12cc9-b236-4d96-bd96-064265fe2bb6",
+      "label" : "Sollicitudin, Ullamcorper",
+      "relatable_types" : [
+        "case",
+        "vraag",
+        "product",
+        "casetype"
+      ],
+      "related_objects" : [],
+      "security_rules" : [
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        },
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        }
+      ],
+      "type" : "product",
+      "values" : {
+        "pdc_approach" : "<h3>\tParturient Pellentesque Pharetra</h3><p>\tMaecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li></ul>",
+        "pdc_audience" : "Tristique Etiam Justo Parturient",
+        "pdc_description" : "<p>\tInteger posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.</p>",
+        "pdc_external_id" : "74121BB1-AF75-47D1-A94E-850A112FAE4B",
+        "pdc_name" : "Ligula, Fusce",
+        "pdc_price" : "",
+        "pdc_terms" : "<div class=\"central_text\" id=\"Malesuada_1_2_Quam_text_show\" sizcache=\"1\" sizset=\"6\">\t<p>\t\tCras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum.</p></div><p>\t&nbsp;</p>",
+        "pdc_work_instruction" : "<table class=\"Sem Vehicula Cursus\"> <tr> <td class=\"Sem Vehicula Cursus\">#</td> <td class=\"Sem Vehicula Cursus\">Nibh Commodo Consectetur</td> <td class=\"Sem Vehicula Cursus\">Vervolg</td> </tr> <tr> <td class=\"Sem Vehicula Cursus\">1</td> <td class=\"Sem Vehicula Cursus\"><span class=\"Sem Vehicula Cursus\">Sem Vehicula Cursus</span></td> <td class=\"Sem Vehicula Cursus\"></td> </tr> <tr> <td class=\"Sem Vehicula Cursus\">2</td> <td class=\"Sem Vehicula Cursus\"><span class=\"Sem Vehicula Cursus_actie\">Sem Vehicula Cursus</span></td> <td class=\"Sem Vehicula Cursus\"></td> </tr> <tr> <td class=\"Sem Vehicula Cursus\">3</td> <td class=\"Sem Vehicula Cursus\"><span class=\"Sem Vehicula Cursus_actie\">Lorem Fermentum Purus Ornare</span></td> <td class=\"Sem Vehicula Cursus\"></td> </tr> <tr> <td class=\"Sem Vehicula Cursus\">4</td> <td class=\"Sem Vehicula Cursus\"><span class=\"Sem Vehicula Cursus_actie\">Mattis Etiam Lorem Ipsum Ridiculus</span></td> <td class=\"Sem Vehicula Cursus\"></td> </tr> <tr> <td class=\"Sem Vehicula Cursus\">5</td> <td class=\"Sem Vehicula Cursus\"><span class=\"Sem Vehicula Cursus_vraag\">Ipsum Sem Purus Cursus Bibendum?</span></td> <td class=\"Sem Vehicula Cursus\">  \t\t\t\t\t\tMattis => \t\t\t\t\t\tPurus Cursus<br> \t\t\t\t\t\tElit => \t\t\t\t\t\tVestibulum </td> </tr> <tr> <td class=\"Sem Vehicula Cursus\">6</td> <td class=\"Sem Vehicula Cursus\"><span class=\"Sem Vehicula Cursus_actie\">Tellus Dapibus</span></td> <td class=\"Sem Vehicula Cursus\"></td> </tr> <tr> <td class=\"Sem Vehicula Cursus\">7</td> <td class=\"Sem Vehicula Cursus\"><span class=\"Sem Vehicula Cursus_vraag\">Is aanvraag volledig?</span></td> <td class=\"Sem Vehicula Cursus\">  \t\t\t\t\t\tJa => \t\t\t\t\t\tSit <br> \t\t\t\t\t\tVulputate => \t\t\t\t\t\tIpsum Amet</td> </tr> <tr> <td class=\"Sem Vehicula Cursus\">8</td> <td class=\"Sem Vehicula Cursus\"><span class=\"Sem Vehicula Cursus_vraag\">Cras Purus Etiam Venenatis Porta?</span></td> <td class=\"Sem Vehicula Cursus\">  \t\t\t\t\t\tJa => \t\t\t\t\t\tStap 10<br> \t\t\t\t\t\tNee => \t\t\t\t\t\tStap 9</td> </tr> <tr> <td class=\"Sem Vehicula Cursus\">9</td> <td class=\"Sem Vehicula Cursus\"><span class=\"Sem Vehicula Cursus_actie\">Elit Quam Aenean Malesuada Magna</span></td> <td class=\"Sem Vehicula Cursus\"></td> </tr> <tr> <td class=\"Sem Vehicula Cursus\">10</td> <td class=\"Sem Vehicula Cursus\"><span class=\"Sem Vehicula Cursus_actie\">Justo Ullamcorper Sem Amet Fusce</span></td> <td class=\"Sem Vehicula Cursus\"></td> </tr> </table>"
+      }
+    }
+  ],
+  "rows" : 1,
+  "status_code" : "200"
+}
