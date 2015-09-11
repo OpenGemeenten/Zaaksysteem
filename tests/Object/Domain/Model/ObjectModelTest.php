@@ -1,6 +1,7 @@
 <?php
 namespace SimplyAdmire\Zaaksysteem\Tests\Unit\Object\Domain\Model;
 
+use SimplyAdmire\Zaaksysteem\Object\Domain\Model\Object\SecurityRule;
 use SimplyAdmire\Zaaksysteem\Object\Domain\Model\ObjectModel;
 
 class ObjectModelTest extends \PHPUnit_Framework_TestCase {
@@ -31,8 +32,14 @@ class ObjectModelTest extends \PHPUnit_Framework_TestCase {
         );
 
         $object->getSecurityRules()->rewind();
+        /** @var SecurityRule $firstSecurityRule */
         $firstSecurityRule = $object->getSecurityRules()->current();
         $this->assertEquals($firstSecurityRule, $object->getSecurityRules()->current());
+
+        $this->assertEquals($data['security_rules'][0]['capability'], $firstSecurityRule->getCapability());
+        $this->assertEquals($data['security_rules'][0]['entity_id'], $firstSecurityRule->getEntityId());
+        $this->assertEquals($data['security_rules'][0]['entity_type'], $firstSecurityRule->getEntityType());
+        $this->assertEquals($data['security_rules'][0]['groupname'], $firstSecurityRule->getGroupName());
     }
 
 }
