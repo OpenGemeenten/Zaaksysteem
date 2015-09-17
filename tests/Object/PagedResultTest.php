@@ -5,9 +5,9 @@ use Closure;
 use SimplyAdmire\Zaaksysteem\Object\PagedResult;
 use SimplyAdmire\Zaaksysteem\Tests\Unit\Fixtures\DummyModel;
 use SimplyAdmire\Zaaksysteem\Object\Client;
-use SimplyAdmire\Zaaksysteem\Tests\Unit\Object\Helpers\ConfigurationHelperTrait;
+use SimplyAdmire\Zaaksysteem\Tests\Unit\Helpers\ConfigurationHelperTrait;
 
-require_once(__DIR__ . '/Helpers/ConfigurationHelperTrait.php');
+require_once(__DIR__ . '/../Helpers/ConfigurationHelperTrait.php');
 require_once(__DIR__ . '/../Fixtures/DummyModel.php');
 
 class PagedResultTest extends \PHPUnit_Framework_TestCase
@@ -154,7 +154,6 @@ class PagedResultTest extends \PHPUnit_Framework_TestCase
         try {
             $this->result->current();
         } catch (\Exception $exception) {
-            die();
         }
 
         $this->assertEquals(2, $countNumberOfResultPages());

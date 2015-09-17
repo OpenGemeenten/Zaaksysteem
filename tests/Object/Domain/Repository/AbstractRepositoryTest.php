@@ -2,9 +2,9 @@
 namespace SimplyAdmire\Zaaksysteem\Tests\Unit\Object\Domain\Repository;
 
 use SimplyAdmire\Zaaksysteem\Object\Client;
-use SimplyAdmire\Zaaksysteem\Tests\Unit\Object\Helpers\ConfigurationHelperTrait;
+use SimplyAdmire\Zaaksysteem\Tests\Unit\Helpers\ConfigurationHelperTrait;
 
-require_once(__DIR__ . '/../../Helpers/ConfigurationHelperTrait.php');
+require_once(__DIR__ . '/../../../Helpers/ConfigurationHelperTrait.php');
 
 abstract class AbstractRepositoryTest extends \PHPUnit_Framework_TestCase
 {

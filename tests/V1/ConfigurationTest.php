@@ -2,9 +2,9 @@
 namespace SimplyAdmire\Zaaksysteem\Tests\Unit\V1;
 
 use SimplyAdmire\Zaaksysteem\Configuration;
-use SimplyAdmire\Zaaksysteem\Tests\Unit\V1\Helpers\ConfigurationHelperTrait;
+use SimplyAdmire\Zaaksysteem\Tests\Unit\Helpers\ConfigurationHelperTrait;
 
-require_once(__DIR__ . '/Helpers/ConfigurationHelperTrait.php');
+require_once(__DIR__ . '/../Helpers/ConfigurationHelperTrait.php');
 
 class ConfigurationTest extends \PHPUnit_Framework_TestCase
 {
