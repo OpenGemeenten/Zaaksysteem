@@ -1,8 +1,8 @@
 <?php
-namespace SimplyAdmire\Zaaksysteem\Tests\Unit\V1;
+namespace SimplyAdmire\Zaaksysteem\Tests\Unit\Object;
 
-use SimplyAdmire\Zaaksysteem\Tests\Unit\V1\Helpers\ConfigurationHelperTrait;
-use SimplyAdmire\Zaaksysteem\V1\Client;
+use SimplyAdmire\Zaaksysteem\Tests\Unit\Object\Helpers\ConfigurationHelperTrait;
+use SimplyAdmire\Zaaksysteem\Object\Client;
 use SimplyAdmire\Zaaksysteem\Configuration;
 use GuzzleHttp\ClientInterface as HttpClientInterface;
 
@@ -174,7 +174,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $mockBody = $this->getMock('stdClass', ['getContents']);
         $mockBody->expects($this->once())
             ->method('getContents')
-            ->will($this->returnValue(file_get_contents(__DIR__ . '/Fixtures/Responses/CaseType/page.json')));
+            ->will($this->returnValue(file_get_contents(__DIR__ . '/Fixtures/Responses/Object/products.json')));
         $mockResponse = $this->getMock('\GuzzleHttp\Psr7\Response');
         $mockResponse->expects($this->once())
             ->method('getBody')
@@ -193,7 +193,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $client = new Client($configuration, $mockGuzzleClient);
         $result = $client->request('GET', 'path');
 
-        $this->assertArrayHasKey('pager', $result);
+        $this->assertArrayHasKey('num_rows', $result);
     }
 
 }

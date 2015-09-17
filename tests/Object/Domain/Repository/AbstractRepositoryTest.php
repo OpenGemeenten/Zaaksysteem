@@ -1,10 +1,10 @@
 <?php
 namespace SimplyAdmire\Zaaksysteem\Tests\Unit\Object\Domain\Repository;
 
-use SimplyAdmire\Zaaksysteem\Tests\Unit\Helpers\ConfigurationHelperTrait;
-use SimplyAdmire\Zaaksysteem\V1\Client;
+use SimplyAdmire\Zaaksysteem\Object\Client;
+use SimplyAdmire\Zaaksysteem\Tests\Unit\Object\Helpers\ConfigurationHelperTrait;
 
-require_once(__DIR__ . '/../../../V1/Helpers/ConfigurationHelperTrait.php');
+require_once(__DIR__ . '/../../Helpers/ConfigurationHelperTrait.php');
 
 abstract class AbstractRepositoryTest extends \PHPUnit_Framework_TestCase
 {
@@ -29,6 +29,23 @@ abstract class AbstractRepositoryTest extends \PHPUnit_Framework_TestCase
      * @var string
      */
     protected $modelClassName;
+
+    /**
+     * @test
+     */
+    public function findAllReturnsFilledPagedResult()
+    {
+        $response = json_decode(file_get_contents($this->getListFixturePath()), true);
+
+        $mockClient = $this->getMock(Client::class, ['request'], [], '', false);
+        $mockClient->expects($this->any())
+            ->method('request')
+            ->will($this->returnValue($response));
+        $repository = new $this->repositoryClassName($mockClient);
+
+        $result = $repository->findAll();
+        $this->assertEquals($response['num_rows'], $result->count());
+    }
 
     /**
      * @test

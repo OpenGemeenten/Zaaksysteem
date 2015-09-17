@@ -1,5 +1,5 @@
 <?php
-namespace SimplyAdmire\Zaaksysteem\Tests\Unit\V1\Helpers;
+namespace SimplyAdmire\Zaaksysteem\Tests\Unit\Object\Helpers;
 
 /**
  * Trait containing helper functions for handling Configuration objects

@@ -1,0 +1,461 @@
+{
+  "at" : null,
+  "comment" : null,
+  "next" : "https://foobar.com/api/public/6/product?zapi_page=2",
+  "num_rows" : "187",
+  "prev" : null,
+  "result" : [
+    {
+      "actions" : [
+        "read",
+        "write",
+        "manage",
+        "log",
+        "create_note"
+      ],
+      "date_created" : "2015-09-02T06:58:58Z",
+      "date_modified" : "2015-09-02T06:58:58Z",
+      "id" : "731f9344-cacc-4d63-b88c-2ecdfd9ad1d1",
+      "label" : "Elit Tristique Vehicula Etiam Mattis",
+      "relatable_types" : [
+        "case",
+        "vraag",
+        "product",
+        "casetype"
+      ],
+      "related_objects" : [],
+      "security_rules" : [
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        },
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        }
+      ],
+      "type" : "product",
+      "values" : {
+        "pdc_approach" : "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+        "pdc_audience" : "particulier",
+        "pdc_description" : "Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.",
+        "pdc_external_id" : "B35D88C3-471C-4955-814C-488603731B81",
+        "pdc_name" : "Sit Sollicitudin Fusce Nullam Tristique",
+        "pdc_price" : "",
+        "pdc_terms" : "Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
+        "pdc_work_instruction" : "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+      }
+    },
+    {
+      "actions" : [
+        "read",
+        "write",
+        "manage",
+        "log",
+        "create_note"
+      ],
+      "date_created" : "2015-09-02T06:58:58Z",
+      "date_modified" : "2015-09-02T06:58:58Z",
+      "id" : "731f9344-cacc-4d63-b88c-2ecdfd9ad1d1",
+      "label" : "Elit Tristique Vehicula Etiam Mattis",
+      "relatable_types" : [
+        "case",
+        "vraag",
+        "product",
+        "casetype"
+      ],
+      "related_objects" : [],
+      "security_rules" : [
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        },
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        }
+      ],
+      "type" : "product",
+      "values" : {
+        "pdc_approach" : "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+        "pdc_audience" : "particulier",
+        "pdc_description" : "Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.",
+        "pdc_external_id" : "B35D88C3-471C-4955-814C-488603731B81",
+        "pdc_name" : "Sit Sollicitudin Fusce Nullam Tristique",
+        "pdc_price" : "",
+        "pdc_terms" : "Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
+        "pdc_work_instruction" : "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+      }
+    },
+    {
+      "actions" : [
+        "read",
+        "write",
+        "manage",
+        "log",
+        "create_note"
+      ],
+      "date_created" : "2015-09-02T06:58:58Z",
+      "date_modified" : "2015-09-02T06:58:58Z",
+      "id" : "731f9344-cacc-4d63-b88c-2ecdfd9ad1d1",
+      "label" : "Elit Tristique Vehicula Etiam Mattis",
+      "relatable_types" : [
+        "case",
+        "vraag",
+        "product",
+        "casetype"
+      ],
+      "related_objects" : [],
+      "security_rules" : [
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        },
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        }
+      ],
+      "type" : "product",
+      "values" : {
+        "pdc_approach" : "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+        "pdc_audience" : "particulier",
+        "pdc_description" : "Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.",
+        "pdc_external_id" : "B35D88C3-471C-4955-814C-488603731B81",
+        "pdc_name" : "Sit Sollicitudin Fusce Nullam Tristique",
+        "pdc_price" : "",
+        "pdc_terms" : "Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
+        "pdc_work_instruction" : "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+      }
+    },
+    {
+      "actions" : [
+        "read",
+        "write",
+        "manage",
+        "log",
+        "create_note"
+      ],
+      "date_created" : "2015-09-02T06:58:58Z",
+      "date_modified" : "2015-09-02T06:58:58Z",
+      "id" : "731f9344-cacc-4d63-b88c-2ecdfd9ad1d1",
+      "label" : "Elit Tristique Vehicula Etiam Mattis",
+      "relatable_types" : [
+        "case",
+        "vraag",
+        "product",
+        "casetype"
+      ],
+      "related_objects" : [],
+      "security_rules" : [
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        },
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        }
+      ],
+      "type" : "product",
+      "values" : {
+        "pdc_approach" : "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+        "pdc_audience" : "particulier",
+        "pdc_description" : "Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.",
+        "pdc_external_id" : "B35D88C3-471C-4955-814C-488603731B81",
+        "pdc_name" : "Sit Sollicitudin Fusce Nullam Tristique",
+        "pdc_price" : "",
+        "pdc_terms" : "Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
+        "pdc_work_instruction" : "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+      }
+    },
+    {
+      "actions" : [
+        "read",
+        "write",
+        "manage",
+        "log",
+        "create_note"
+      ],
+      "date_created" : "2015-09-02T06:58:58Z",
+      "date_modified" : "2015-09-02T06:58:58Z",
+      "id" : "731f9344-cacc-4d63-b88c-2ecdfd9ad1d1",
+      "label" : "Elit Tristique Vehicula Etiam Mattis",
+      "relatable_types" : [
+        "case",
+        "vraag",
+        "product",
+        "casetype"
+      ],
+      "related_objects" : [],
+      "security_rules" : [
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        },
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        }
+      ],
+      "type" : "product",
+      "values" : {
+        "pdc_approach" : "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+        "pdc_audience" : "particulier",
+        "pdc_description" : "Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.",
+        "pdc_external_id" : "B35D88C3-471C-4955-814C-488603731B81",
+        "pdc_name" : "Sit Sollicitudin Fusce Nullam Tristique",
+        "pdc_price" : "",
+        "pdc_terms" : "Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
+        "pdc_work_instruction" : "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+      }
+    },
+    {
+      "actions" : [
+        "read",
+        "write",
+        "manage",
+        "log",
+        "create_note"
+      ],
+      "date_created" : "2015-09-02T06:58:58Z",
+      "date_modified" : "2015-09-02T06:58:58Z",
+      "id" : "731f9344-cacc-4d63-b88c-2ecdfd9ad1d1",
+      "label" : "Elit Tristique Vehicula Etiam Mattis",
+      "relatable_types" : [
+        "case",
+        "vraag",
+        "product",
+        "casetype"
+      ],
+      "related_objects" : [],
+      "security_rules" : [
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        },
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        }
+      ],
+      "type" : "product",
+      "values" : {
+        "pdc_approach" : "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+        "pdc_audience" : "particulier",
+        "pdc_description" : "Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.",
+        "pdc_external_id" : "B35D88C3-471C-4955-814C-488603731B81",
+        "pdc_name" : "Sit Sollicitudin Fusce Nullam Tristique",
+        "pdc_price" : "",
+        "pdc_terms" : "Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
+        "pdc_work_instruction" : "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+      }
+    },
+    {
+      "actions" : [
+        "read",
+        "write",
+        "manage",
+        "log",
+        "create_note"
+      ],
+      "date_created" : "2015-09-02T06:58:58Z",
+      "date_modified" : "2015-09-02T06:58:58Z",
+      "id" : "731f9344-cacc-4d63-b88c-2ecdfd9ad1d1",
+      "label" : "Elit Tristique Vehicula Etiam Mattis",
+      "relatable_types" : [
+        "case",
+        "vraag",
+        "product",
+        "casetype"
+      ],
+      "related_objects" : [],
+      "security_rules" : [
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        },
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        }
+      ],
+      "type" : "product",
+      "values" : {
+        "pdc_approach" : "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+        "pdc_audience" : "particulier",
+        "pdc_description" : "Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.",
+        "pdc_external_id" : "B35D88C3-471C-4955-814C-488603731B81",
+        "pdc_name" : "Sit Sollicitudin Fusce Nullam Tristique",
+        "pdc_price" : "",
+        "pdc_terms" : "Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
+        "pdc_work_instruction" : "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+      }
+    },
+    {
+      "actions" : [
+        "read",
+        "write",
+        "manage",
+        "log",
+        "create_note"
+      ],
+      "date_created" : "2015-09-02T06:58:58Z",
+      "date_modified" : "2015-09-02T06:58:58Z",
+      "id" : "731f9344-cacc-4d63-b88c-2ecdfd9ad1d1",
+      "label" : "Elit Tristique Vehicula Etiam Mattis",
+      "relatable_types" : [
+        "case",
+        "vraag",
+        "product",
+        "casetype"
+      ],
+      "related_objects" : [],
+      "security_rules" : [
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        },
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        }
+      ],
+      "type" : "product",
+      "values" : {
+        "pdc_approach" : "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+        "pdc_audience" : "particulier",
+        "pdc_description" : "Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.",
+        "pdc_external_id" : "B35D88C3-471C-4955-814C-488603731B81",
+        "pdc_name" : "Sit Sollicitudin Fusce Nullam Tristique",
+        "pdc_price" : "",
+        "pdc_terms" : "Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
+        "pdc_work_instruction" : "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+      }
+    },
+    {
+      "actions" : [
+        "read",
+        "write",
+        "manage",
+        "log",
+        "create_note"
+      ],
+      "date_created" : "2015-09-02T06:58:58Z",
+      "date_modified" : "2015-09-02T06:58:58Z",
+      "id" : "731f9344-cacc-4d63-b88c-2ecdfd9ad1d1",
+      "label" : "Elit Tristique Vehicula Etiam Mattis",
+      "relatable_types" : [
+        "case",
+        "vraag",
+        "product",
+        "casetype"
+      ],
+      "related_objects" : [],
+      "security_rules" : [
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        },
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        }
+      ],
+      "type" : "product",
+      "values" : {
+        "pdc_approach" : "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+        "pdc_audience" : "particulier",
+        "pdc_description" : "Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.",
+        "pdc_external_id" : "B35D88C3-471C-4955-814C-488603731B81",
+        "pdc_name" : "Sit Sollicitudin Fusce Nullam Tristique",
+        "pdc_price" : "",
+        "pdc_terms" : "Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
+        "pdc_work_instruction" : "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+      }
+    },
+    {
+      "actions" : [
+        "read",
+        "write",
+        "manage",
+        "log",
+        "create_note"
+      ],
+      "date_created" : "2015-09-02T06:58:58Z",
+      "date_modified" : "2015-09-02T06:58:58Z",
+      "id" : "731f9344-cacc-4d63-b88c-2ecdfd9ad1d1",
+      "label" : "Elit Tristique Vehicula Etiam Mattis",
+      "relatable_types" : [
+        "case",
+        "vraag",
+        "product",
+        "casetype"
+      ],
+      "related_objects" : [],
+      "security_rules" : [
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        },
+        {
+          "capability" : "manage",
+          "entity_id" : "0|20002",
+          "entity_type" : "position",
+          "groupname" : null
+        }
+      ],
+      "type" : "product",
+      "values" : {
+        "pdc_approach" : "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+        "pdc_audience" : "particulier",
+        "pdc_description" : "Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.",
+        "pdc_external_id" : "B35D88C3-471C-4955-814C-488603731B81",
+        "pdc_name" : "Sit Sollicitudin Fusce Nullam Tristique",
+        "pdc_price" : "",
+        "pdc_terms" : "Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
+        "pdc_work_instruction" : "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+      }
+    }
+  ],
+  "rows" : 10,
+  "status_code" : "200"
+}

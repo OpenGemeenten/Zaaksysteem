@@ -3,8 +3,8 @@ namespace SimplyAdmire\Zaaksysteem\Object\Domain\Repository;
 
 use SimplyAdmire\Zaaksysteem\Exception\RequestException;
 use SimplyAdmire\Zaaksysteem\Exception\ResponseException;
-use SimplyAdmire\Zaaksysteem\V1\Client;
-use SimplyAdmire\Zaaksysteem\V1\PagedResult;
+use SimplyAdmire\Zaaksysteem\Object\Client;
+use SimplyAdmire\Zaaksysteem\Object\PagedResult;
 
 abstract class AbstractRepository
 {

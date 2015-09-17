@@ -1,12 +1,13 @@
 <?php
-namespace SimplyAdmire\Zaaksysteem\Tests\Unit;
+namespace SimplyAdmire\Zaaksysteem\Tests\Unit\Object;
 
 use Closure;
-use SimplyAdmire\Zaaksysteem\Tests\Unit\V1\Helpers\ConfigurationHelperTrait;
-use SimplyAdmire\Zaaksysteem\V1\PagedResult;
-use SimplyAdmire\Zaaksysteem\V1\Client;
+use SimplyAdmire\Zaaksysteem\Object\PagedResult;
+use SimplyAdmire\Zaaksysteem\Tests\Unit\Fixtures\DummyModel;
+use SimplyAdmire\Zaaksysteem\Object\Client;
+use SimplyAdmire\Zaaksysteem\Tests\Unit\Object\Helpers\ConfigurationHelperTrait;
 
-require_once(__DIR__ . '/../V1/Helpers/ConfigurationHelperTrait.php');
+require_once(__DIR__ . '/Helpers/ConfigurationHelperTrait.php');
 require_once(__DIR__ . '/../Fixtures/DummyModel.php');
 
 class PagedResultTest extends \PHPUnit_Framework_TestCase
@@ -29,16 +30,16 @@ class PagedResultTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->mockClient = $this->getMock('SimplyAdmire\Zaaksysteem\V1\Client', [], [], '', false);
-        $responseArray = json_decode(file_get_contents(__DIR__ . '/Fixtures/Responses/CaseType/page.json'), true);
+        $this->mockClient = $this->getMock('SimplyAdmire\Zaaksysteem\Object\Client', [], [], '', false);
+        $responseArray = json_decode(file_get_contents(__DIR__ . '/Fixtures/Responses/Object/products.json'), true);
 
         for ($page = 1; $page <= 12; $page++) {
             $this->mockClient->expects($this->any())
                 ->method('request')
                 ->will($this->returnCallback(function ($requestMethod, $page) use ($responseArray) {
                     preg_match('/[0-9]*$/', $page, $matches);
-                    $responseArray['result']['instance']['pager']['page'] = (integer)$matches[0];
-                    return $responseArray['result']['instance'];
+                    $responseArray['next'] = 'http://foo.bar/?zapi_page=' . ((integer)$matches[0] + 1);
+                    return $responseArray;
                 }));
         }
 
@@ -54,7 +55,7 @@ class PagedResultTest extends \PHPUnit_Framework_TestCase
      */
     public function resultCountsTotalRows()
     {
-        $this->assertEquals(118, $this->result->count());
+        $this->assertEquals(187, $this->result->count());
     }
 
     /**
@@ -91,7 +92,7 @@ class PagedResultTest extends \PHPUnit_Framework_TestCase
      */
     public function currentReturnsFirstObject()
     {
-        $this->assertInstanceOf(Fixtures\DummyModel::class, $this->result->current());
+        $this->assertInstanceOf(DummyModel::class, $this->result->current());
     }
 
     /**
@@ -150,7 +151,12 @@ class PagedResultTest extends \PHPUnit_Framework_TestCase
         }
 
         // Fetch current to be sure the data is fetched
-        $this->result->current();
+        try {
+            $this->result->current();
+        } catch (\Exception $exception) {
+            die();
+        }
+
         $this->assertEquals(2, $countNumberOfResultPages());
     }
 
@@ -193,7 +199,7 @@ class PagedResultTest extends \PHPUnit_Framework_TestCase
             get_class($item);
         }
 
-        $this->assertEquals(12, $countNumberOfResultPages());
+        $this->assertEquals(19, $countNumberOfResultPages());
     }
 
 }

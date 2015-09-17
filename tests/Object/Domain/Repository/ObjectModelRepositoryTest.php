@@ -19,7 +19,7 @@ class ObjectModelRepositoryTest extends AbstractRepositoryTest
      */
     protected function getListFixturePath()
     {
-        return __DIR__ . '/../../Fixtures/Responses/Object/product.json';
+        return __DIR__ . '/../../Fixtures/Responses/Object/products.json';
     }
 
     /**

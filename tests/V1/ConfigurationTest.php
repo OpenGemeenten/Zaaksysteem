@@ -1,8 +1,8 @@
 <?php
 namespace SimplyAdmire\Zaaksysteem\Tests\Unit\V1;
 
-use SimplyAdmire\Zaaksysteem\V1\Configuration;
-use SimplyAdmire\Zaaksysteem\Tests\Unit\Helpers\ConfigurationHelperTrait;
+use SimplyAdmire\Zaaksysteem\Configuration;
+use SimplyAdmire\Zaaksysteem\Tests\Unit\V1\Helpers\ConfigurationHelperTrait;
 
 require_once(__DIR__ . '/Helpers/ConfigurationHelperTrait.php');
 
@@ -17,8 +17,8 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     public function apiBaseUrlIsCorrectlyGeneratedDataProvider()
     {
         return [
-            ['http://foobar.com/', 'http://foobar.com/v1/'],
-            ['http://foobar.com', 'http://foobar.com/v1/']
+            ['http://foobar.com/', 'http://foobar.com/'],
+            ['http://foobar.com', 'http://foobar.com/']
         ];
     }
 
