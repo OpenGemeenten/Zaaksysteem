@@ -69,9 +69,10 @@ class PagedResult implements Iterator
     private function addPage(array $data)
     {
         $this->totalRows = $data['num_rows'];
-        parse_str(parse_url($data['next'], PHP_URL_QUERY), $nextQueryArguments);
+        preg_match('/zapi_page=([0-9]+)/', $data['next'], $pageIndex);
+
         // Subtract 2 to get 0 based array index
-        $pageIndex = (integer)$nextQueryArguments['zapi_page'] - 2;
+        $pageIndex = (integer)$pageIndex[1] - 2;
         $this->pages[$pageIndex] = [];
 
         foreach ($data['result'] as $value) {

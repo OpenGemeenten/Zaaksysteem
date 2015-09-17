@@ -73,8 +73,9 @@ final class ObjectModel
         $this->securityRules = new \SplObjectStorage();
         if (isset($data['security_rules']) && is_array($data['security_rules'])) {
             foreach ($data['security_rules'] as $securityRule) {
-                $securityRule = new SecurityRule($securityRule);
-                $this->securityRules->attach($securityRule);
+                $this->securityRules->attach(
+                    new SecurityRule($securityRule)
+                );
             }
         }
         $this->values = $data['values'];
@@ -179,4 +180,5 @@ final class ObjectModel
     {
         return $this->relatedObjects;
     }
+
 }
