@@ -1,27 +1,25 @@
 <?php
-namespace SimplyAdmire\Zaaksysteem\V1\Domain\Repository;
+namespace SimplyAdmire\Zaaksysteem\Object\Domain\Repository;
 
-use SimplyAdmire\Zaaksysteem\Domain\Repository\AbstractRepository;
 use SimplyAdmire\Zaaksysteem\Exception\RequestException;
 use SimplyAdmire\Zaaksysteem\Exception\ResponseException;
-use SimplyAdmire\Zaaksysteem\V1\Domain\Model\CaseModel;
+use SimplyAdmire\Zaaksysteem\Object\Domain\Model\ObjectModel;
 
-final class CaseRepository extends AbstractRepository
-{
-
-    /**
-     * @var string
-     */
-    protected $modelClassName = 'SimplyAdmire\\Zaaksysteem\\V1\\Domain\\Model\\CaseModel';
+final class ObjectModelRepository extends AbstractRepository {
 
     /**
      * @var string
      */
-    protected $apiPath = 'case';
+    protected $modelClassName = 'SimplyAdmire\\Zaaksysteem\\Object\\Domain\\Model\\ObjectModel';
+
+    /**
+     * @var string
+     */
+    protected $apiPath = 'product';
 
     /**
      * @param string $identifier
-     * @return CaseModel
+     * @return ObjectModel
      * @throws RequestException
      * @throws ResponseException
      */

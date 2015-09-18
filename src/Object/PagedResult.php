@@ -1,5 +1,5 @@
 <?php
-namespace SimplyAdmire\Zaaksysteem\V1;
+namespace SimplyAdmire\Zaaksysteem\Object;
 
 use SimplyAdmire\Zaaksysteem\AbstractPagedResult;
 use SimplyAdmire\Zaaksysteem\Exception\RequestException;
@@ -14,12 +14,20 @@ class PagedResult extends AbstractPagedResult
      */
     protected function addPage(array $data)
     {
-        $this->totalRows = $data['pager']['total_rows'];
-        $pageIndex = $data['pager']['page'] - 1;
+        $this->totalRows = (integer)$data['num_rows'];
+        if ($data['next'] === null) {
+            $pageIndex = (integer)floor($this->totalRows / 10);
+        } else {
+            preg_match('/zapi_page=([0-9]+)/', $data['next'], $pageIndex);
+
+            // Subtract 2 to get 0 based array index
+            $pageIndex = (integer)$pageIndex[1] - 2;
+        }
+
         $this->pages[$pageIndex] = [];
 
-        foreach ($data['rows'] as $value) {
-            $this->pages[$pageIndex][] = new $this->itemClassName($value['instance']);
+        foreach ($data['result'] as $value) {
+            $this->pages[$pageIndex][] = new $this->itemClassName($value);
         }
     }
 
@@ -39,7 +47,7 @@ class PagedResult extends AbstractPagedResult
         }
 
         if (!isset($this->pages[$page])) {
-            $url = $this->path . '?page=' . ($page + 1);
+            $url = $this->path . '?zapi_page=' . ($page + 1);
             $this->addPage($this->client->request('GET', $url));
         }
 

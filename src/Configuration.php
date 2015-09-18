@@ -1,5 +1,5 @@
 <?php
-namespace SimplyAdmire\Zaaksysteem\V1;
+namespace SimplyAdmire\Zaaksysteem;
 
 use Assert\Assertion;
 use Assert\InvalidArgumentException;
@@ -87,7 +87,7 @@ final class Configuration
      */
     public function getApiBaseUrl()
     {
-        return sprintf('%s/v1/', $this->apiBaseUrl);
+        return rtrim($this->apiBaseUrl, '/') . '/';
     }
 
     /**

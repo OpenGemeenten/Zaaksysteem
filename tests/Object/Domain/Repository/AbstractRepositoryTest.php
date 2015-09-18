@@ -1,14 +1,13 @@
 <?php
-namespace SimplyAdmire\Zaaksysteem\Tests\Unit\V1\Domain\Repository;
+namespace SimplyAdmire\Zaaksysteem\Tests\Unit\Object\Domain\Repository;
 
+use SimplyAdmire\Zaaksysteem\Object\Client;
 use SimplyAdmire\Zaaksysteem\Tests\Unit\Helpers\ConfigurationHelperTrait;
-use SimplyAdmire\Zaaksysteem\V1\Client;
 
 require_once(__DIR__ . '/../../../Helpers/ConfigurationHelperTrait.php');
 
 abstract class AbstractRepositoryTest extends \PHPUnit_Framework_TestCase
 {
-
     use ConfigurationHelperTrait;
 
     /**
@@ -41,12 +40,11 @@ abstract class AbstractRepositoryTest extends \PHPUnit_Framework_TestCase
         $mockClient = $this->getMock(Client::class, ['request'], [], '', false);
         $mockClient->expects($this->any())
             ->method('request')
-            ->will($this->returnValue($response['result']['instance']));
-
+            ->will($this->returnValue($response));
         $repository = new $this->repositoryClassName($mockClient);
 
         $result = $repository->findAll();
-        $this->assertEquals($response['result']['instance']['pager']['total_rows'], $result->count());
+        $this->assertEquals($response['num_rows'], $result->count());
     }
 
     /**
@@ -56,12 +54,12 @@ abstract class AbstractRepositoryTest extends \PHPUnit_Framework_TestCase
     {
         $identifier = '0123456789-abcdef';
         $response = json_decode(file_get_contents($this->getDetailFixturePath()), true);
-        $response['result']['instance']['id'] = $identifier;
+        $response['result'][0]['id'] = $identifier;
 
         $mockClient = $this->getMock(Client::class, ['request'], [], '', false);
         $mockClient->expects($this->any())
             ->method('request')
-            ->will($this->returnValue($response['result']['instance']));
+            ->will($this->returnValue($response['result'][0]));
 
         $repository = new $this->repositoryClassName($mockClient);
 

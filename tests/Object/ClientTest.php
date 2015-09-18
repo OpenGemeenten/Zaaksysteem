@@ -1,5 +1,5 @@
 <?php
-namespace SimplyAdmire\Zaaksysteem\Tests\Unit\V1;
+namespace SimplyAdmire\Zaaksysteem\Tests\Unit\Object;
 
 use SimplyAdmire\Zaaksysteem\Tests\Unit\AbstractClientTest;
 
@@ -11,7 +11,7 @@ class ClientTest extends AbstractClientTest
      */
     public function getListFixturePath()
     {
-        return 'V1/Fixtures/Responses/CaseType/page.json';
+        return 'Object/Fixtures/Responses/Object/products.json';
     }
 
     /**
@@ -19,7 +19,7 @@ class ClientTest extends AbstractClientTest
      */
     public function getClientClassName()
     {
-        return 'SimplyAdmire\\Zaaksysteem\\V1\\Client';
+        return 'SimplyAdmire\\Zaaksysteem\\Object\\Client';
     }
 
     /**
@@ -28,7 +28,7 @@ class ClientTest extends AbstractClientTest
      */
     public function assertValidResponse(array $result)
     {
-        $this->assertArrayHasKey('pager', $result);
+        $this->assertArrayHasKey('result', $result);
     }
 
 }

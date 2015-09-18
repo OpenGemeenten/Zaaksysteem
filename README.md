@@ -42,8 +42,8 @@ For this API you have to configure an "Extern Koppelprofiel" in your Zaaksysteem
 
 Implemented methods:
 
-- [ ] get
-- [ ] list
+- [x] get
+- [x] list
 
 ## V1
 
