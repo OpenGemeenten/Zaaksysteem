@@ -33,12 +33,12 @@ class PagedResultTest extends \PHPUnit_Framework_TestCase
         $this->mockClient = $this->getMock('SimplyAdmire\Zaaksysteem\Object\Client', [], [], '', false);
         $responseArray = json_decode(file_get_contents(__DIR__ . '/Fixtures/Responses/Object/products.json'), true);
 
-        for ($page = 1; $page <= 12; $page++) {
+        for ($page = 1; $page <= 19; $page++) {
             $this->mockClient->expects($this->any())
                 ->method('request')
                 ->will($this->returnCallback(function ($requestMethod, $page) use ($responseArray) {
                     preg_match('/[0-9]*$/', $page, $matches);
-                    $responseArray['next'] = 'http://foo.bar/?zapi_page=' . ((integer)$matches[0] + 1);
+                    $responseArray['next'] = (integer)$matches[0] === 19 ? null : 'http://foo.bar/?zapi_page=' . ((integer)$matches[0] + 1);
                     return $responseArray;
                 }));
         }

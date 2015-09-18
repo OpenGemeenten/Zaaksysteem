@@ -68,11 +68,16 @@ class PagedResult implements Iterator
      */
     private function addPage(array $data)
     {
-        $this->totalRows = $data['num_rows'];
-        preg_match('/zapi_page=([0-9]+)/', $data['next'], $pageIndex);
+        $this->totalRows = (integer)$data['num_rows'];
+        if ($data['next'] === null) {
+            $pageIndex = (integer)floor($this->totalRows / 10);
+        } else {
+            preg_match('/zapi_page=([0-9]+)/', $data['next'], $pageIndex);
 
-        // Subtract 2 to get 0 based array index
-        $pageIndex = (integer)$pageIndex[1] - 2;
+            // Subtract 2 to get 0 based array index
+            $pageIndex = (integer)$pageIndex[1] - 2;
+        }
+
         $this->pages[$pageIndex] = [];
 
         foreach ($data['result'] as $value) {
