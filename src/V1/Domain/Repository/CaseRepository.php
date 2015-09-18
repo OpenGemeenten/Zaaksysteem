@@ -1,6 +1,7 @@
 <?php
 namespace SimplyAdmire\Zaaksysteem\V1\Domain\Repository;
 
+use SimplyAdmire\Zaaksysteem\Domain\Repository\AbstractRepository;
 use SimplyAdmire\Zaaksysteem\Exception\RequestException;
 use SimplyAdmire\Zaaksysteem\Exception\ResponseException;
 use SimplyAdmire\Zaaksysteem\V1\Domain\Model\CaseModel;

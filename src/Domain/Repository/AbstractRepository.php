@@ -1,17 +1,15 @@
 <?php
-namespace SimplyAdmire\Zaaksysteem\V1\Domain\Repository;
+namespace SimplyAdmire\Zaaksysteem\Domain\Repository;
 
+use SimplyAdmire\Zaaksysteem\AbstractClient;
 use SimplyAdmire\Zaaksysteem\Exception\RequestException;
 use SimplyAdmire\Zaaksysteem\Exception\ResponseException;
-use SimplyAdmire\Zaaksysteem\V1\Client;
-use SimplyAdmire\Zaaksysteem\V1\Domain\Model\CaseModel;
-use SimplyAdmire\Zaaksysteem\V1\PagedResult;
 
 abstract class AbstractRepository
 {
 
     /**
-     * @var Client
+     * @var AbstractClient
      */
     private $client;
 
@@ -26,9 +24,9 @@ abstract class AbstractRepository
     protected $apiPath;
 
     /**
-     * @param Client $client
+     * @param AbstractClient $client
      */
-    public function __construct(Client $client)
+    public function __construct(AbstractClient $client)
     {
         $this->client = $client;
     }
@@ -38,7 +36,8 @@ abstract class AbstractRepository
      */
     public function findAll()
     {
-        $result = new PagedResult(
+        $pagedResultClassName = preg_replace('/\\Domain.*$/', 'PagedResult', get_class($this));
+        $result = new $pagedResultClassName(
             $this->client,
             $this->modelClassName,
             $this->apiPath
