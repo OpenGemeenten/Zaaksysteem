@@ -52,7 +52,7 @@ final class ObjectModel
     private $type;
 
     /**
-     * @var \SplObjectStorage
+     * @var array
      */
     private $values;
 
@@ -179,6 +179,21 @@ final class ObjectModel
     public function getRelatedObjects()
     {
         return $this->relatedObjects;
+    }
+
+    /**
+     * @param string $methodName
+     * @param array $arguments
+     * @return mixed
+     */
+    public function __call($methodName, $arguments)
+    {
+        if (substr($methodName, 0, 3) === 'get') {
+            $propertyName = lcfirst(substr($methodName, 3));
+            if (!property_exists($this, $propertyName) && isset($this->values['pdc_' . $propertyName])) {
+                return $this->values['pdc_' . $propertyName];
+            }
+        }
     }
 
 }
