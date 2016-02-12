@@ -51,7 +51,7 @@ abstract class AbstractPagedResult implements Iterator
         $this->itemClassName = $itemClassName;
         $this->path = $path;
 
-        $this->addPage($this->client->request('GET', $this->path));
+        $this->addPage($this->client->request('GET', $this->path), 0);
     }
 
     /**
@@ -64,9 +64,10 @@ abstract class AbstractPagedResult implements Iterator
 
     /**
      * @param array $data
+     * @param integer $pageIndex
      * @return void
      */
-    abstract protected function addPage(array $data);
+    abstract protected function addPage(array $data, $pageIndex);
 
     /**
      * @return object

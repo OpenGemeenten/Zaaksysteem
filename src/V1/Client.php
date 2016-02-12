@@ -13,7 +13,8 @@ class Client extends AbstractClient
      * @param array $content
      * @return array
      */
-    protected function getResult(array $content) {
+    protected function getResult(array $content)
+    {
         Assertion::keyExists($content, 'result');
         Assertion::keyExists($content['result'], 'instance');
 

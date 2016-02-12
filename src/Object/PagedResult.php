@@ -10,20 +10,12 @@ class PagedResult extends AbstractPagedResult
 
     /**
      * @param array $data
+     * @param integer $pageIndex
      * @return void
      */
-    protected function addPage(array $data)
+    protected function addPage(array $data, $pageIndex)
     {
         $this->totalRows = (integer)$data['num_rows'];
-        if ($data['next'] === null) {
-            $pageIndex = (integer)floor($this->totalRows / 10);
-        } else {
-            preg_match('/zapi_page=([0-9]+)/', $data['next'], $pageIndex);
-
-            // Subtract 2 to get 0 based array index
-            $pageIndex = (integer)$pageIndex[1] - 2;
-        }
-
         $this->pages[$pageIndex] = [];
 
         foreach ($data['result'] as $value) {
@@ -48,7 +40,7 @@ class PagedResult extends AbstractPagedResult
 
         if (!isset($this->pages[$page])) {
             $url = $this->path . '?zapi_page=' . ($page + 1);
-            $this->addPage($this->client->request('GET', $url));
+            $this->addPage($this->client->request('GET', $url), $page);
         }
 
         return $this->pages[$page][$index];

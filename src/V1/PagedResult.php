@@ -10,9 +10,10 @@ class PagedResult extends AbstractPagedResult
 
     /**
      * @param array $data
+     * @param integer $pageIndex
      * @return void
      */
-    protected function addPage(array $data)
+    protected function addPage(array $data, $pageIndex)
     {
         $this->totalRows = $data['pager']['total_rows'];
         $pageIndex = $data['pager']['page'] - 1;
@@ -40,7 +41,7 @@ class PagedResult extends AbstractPagedResult
 
         if (!isset($this->pages[$page])) {
             $url = $this->path . '?page=' . ($page + 1);
-            $this->addPage($this->client->request('GET', $url));
+            $this->addPage($this->client->request('GET', $url), $page);
         }
 
         return $this->pages[$page][$index];
