@@ -55,6 +55,6 @@ abstract class AbstractRepository
     public function findOneByIdentifier($identifier)
     {
         $result = $this->client->request('GET', $this->apiPath . '/' . $identifier);
-        return new $this->modelClassName($result);
+        return new $this->modelClassName($result['result'][0]);
     }
 }
