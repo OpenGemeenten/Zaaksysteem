@@ -59,7 +59,7 @@ abstract class AbstractRepositoryTest extends \PHPUnit_Framework_TestCase
         $mockClient = $this->getMock(Client::class, ['request'], [], '', false);
         $mockClient->expects($this->any())
             ->method('request')
-            ->will($this->returnValue($response['result'][0]));
+            ->will($this->returnValue($response));
 
         $repository = new $this->repositoryClassName($mockClient);
 
