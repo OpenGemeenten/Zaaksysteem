@@ -73,21 +73,21 @@ Below you can find the implemented methods per API:
 - [x] get
 - [x] list
 
-### Case\ControlPanel
+### ControlPanel
 
 - [ ] get
 - [ ] list
 - [ ] create
 - [ ] update
 
-### Case\Host
+### ControlPanel\Host
 
 - [ ] get
 - [ ] list
 - [ ] create
 - [ ] update
 
-### Case\Instance
+### ControlPanel\Instance
 
 - [ ] get
 - [ ] list
