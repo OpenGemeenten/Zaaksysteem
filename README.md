@@ -36,7 +36,7 @@ $caseTypes = $repository->findAll();
 
 ## Object
 
-Manual: https://zaaksysteem.url/man/Zaaksysteem::Manual::API::Object.
+Manual: https://mintlab.zaaksysteem.nl/man/Zaaksysteem::Manual::API::Object.
 
 For this API you have to configure an "Extern Koppelprofiel" in your Zaaksysteem instance.
 
@@ -47,7 +47,7 @@ Implemented methods:
 
 ## V1
 
-Manual: https://zaaksysteem.url/man/Zaaksysteem::Manual::API::V1.
+Manual: https://mintlab.zaaksysteem.nl/man/Zaaksysteem::Manual::API::V1.
 
 For this API you have to configure an "Zaaksysteem API" in your Zaaksysteem instance.
 
