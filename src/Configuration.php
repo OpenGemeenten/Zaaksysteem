@@ -47,6 +47,13 @@ final class Configuration
     private $username;
 
     /**
+     * The API interface ID in Zaaksysteem
+     *
+     * @var integer
+     */
+    private $apiID;
+
+    /**
      * @param array $configuration Array with configuration settings
      * @throws InvalidArgumentException
      */
@@ -61,6 +68,11 @@ final class Configuration
         Assertion::notEmptyKey($configuration, 'username', 'username is required');
         Assertion::string($configuration['username'], 'username has to be a string');
         $this->username = trim($configuration['username']);
+
+        // Validate api interface id
+        Assertion::notEmptyKey($configuration, 'apiID', 'apiID is required');
+        Assertion::integer($configuration['apiID'], 'apiID has to be an integer');
+        $this->apiID = trim($configuration['apiID']);
 
         // Validate api key
         Assertion::notEmptyKey($configuration, 'apiKey', 'apiKey is required');
@@ -104,6 +116,14 @@ final class Configuration
     public function getUsername()
     {
         return $this->username;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getApiID()
+    {
+        return $this->apiID;
     }
 
 }

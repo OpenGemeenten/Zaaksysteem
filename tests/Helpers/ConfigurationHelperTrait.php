@@ -20,7 +20,8 @@ trait ConfigurationHelperTrait
             [
                 'apiBaseUrl' => 'http://foobar.com',
                 'username' => 'foo bar',
-                'apiKey' => 'api key'
+                'apiKey' => 'api key',
+                'apiID' => 42
             ],
             $configuration
         );
