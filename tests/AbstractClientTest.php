@@ -25,7 +25,7 @@ abstract class AbstractClientTest extends \PHPUnit_Framework_TestCase
      * @param HttpClientInterface|null $httpClient
      * @return AbstractClient
      */
-    protected function createClient(Configuration $configuration, HttpClientInterface $httpClient = NULL) {
+    protected function createClient(Configuration $configuration, HttpClientInterface $httpClient = null) {
         $clientClassName = $this->getClientClassName();
         return new $clientClassName($configuration, $httpClient);
     }
@@ -158,59 +158,6 @@ abstract class AbstractClientTest extends \PHPUnit_Framework_TestCase
 
         $httpClient = $clientProperty->getValue($client);
         $this->assertEquals($clientConfiguration['verify'], $httpClient->getConfig()['verify']);
-    }
-
-    /**
-     * @test
-     */
-    public function pathIsCorrectlyAppendedToApiBaseUri()
-    {
-        $configuration = new Configuration(
-            $this->mergeConfigurationWithMinimalConfiguration()
-        );
-
-        $mockGuzzleClient = $this->getMock('GuzzleHttp\Client', ['request']);
-        $mockGuzzleClient->expects($this->once())
-            ->method('request')
-            ->with('GET', 'http://foobar.com/path')
-            ->will($this->returnValue(null));
-
-        $client = $this->createClient($configuration, $mockGuzzleClient);
-        try {
-            $client->request('GET', 'path');
-        } catch (\Exception $exception) {
-            // We expect an exception as the client will not be able to return a valid request
-        }
-    }
-
-    /**
-     * @test
-     */
-    public function requestIsExecutedCorrectly()
-    {
-        $mockBody = $this->getMock('stdClass', ['getContents']);
-        $mockBody->expects($this->once())
-            ->method('getContents')
-            ->will($this->returnValue(file_get_contents(__DIR__ . '/' . $this->getListFixturePath())));
-        $mockResponse = $this->getMock('\GuzzleHttp\Psr7\Response');
-        $mockResponse->expects($this->once())
-            ->method('getBody')
-            ->will($this->returnValue($mockBody));
-
-        $mockGuzzleClient = $this->getMock('GuzzleHttp\Client', ['request']);
-        $mockGuzzleClient->expects($this->once())
-            ->method('request')
-            ->with('GET', 'http://foobar.com/path')
-            ->will($this->returnValue($mockResponse));
-
-        $configuration = new Configuration(
-            $this->mergeConfigurationWithMinimalConfiguration()
-        );
-
-        $client = $this->createClient($configuration, $mockGuzzleClient);
-        $result = $client->request('GET', 'path');
-
-        $this->assertValidResponse($result);
     }
 
 }

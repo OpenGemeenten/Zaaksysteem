@@ -7,6 +7,20 @@ use SimplyAdmire\Zaaksysteem\AbstractClient;
 class Client extends AbstractClient
 {
 
+
+    /**
+     * @param string $path
+     * @return string
+     */
+    protected function buildRequestUrl($path) {
+        return sprintf(
+            '%s%s/%s',
+            $this->configuration->getApiBaseUrl(),
+            $this->configuration->getApiId(),
+            $path
+        );
+    }
+
     /**
      * Returns the result from the total response content
      *

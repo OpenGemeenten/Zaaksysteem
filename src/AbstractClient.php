@@ -17,7 +17,7 @@ abstract class AbstractClient
      *
      * @var Configuration
      */
-    private $configuration;
+    protected $configuration;
 
     /**
      * A guzzle HTTP client
@@ -45,7 +45,7 @@ abstract class AbstractClient
      * @param array $options
      * @return array
      */
-    private function buildRequestConfiguration(array $options = [])
+    protected function buildRequestConfiguration(array $options = [])
     {
         // Set required options
         $options['auth'] = [$this->configuration->getUsername(), $this->configuration->getApiKey(), 'digest'];
@@ -69,6 +69,14 @@ abstract class AbstractClient
     }
 
     /**
+     * @param string $path
+     * @return string
+     */
+    protected function buildRequestUrl($path) {
+        return sprintf('%s%s', $this->configuration->getApiBaseUrl(), $path);
+    }
+
+    /**
      * @param string $requestMethod
      * @param string $path
      * @param array $options
@@ -78,7 +86,7 @@ abstract class AbstractClient
      */
     public function request($requestMethod, $path, array $options = [])
     {
-        $url = sprintf('%s%s', $this->configuration->getApiBaseUrl(), $path);
+        $url = $this->buildRequestUrl($path);
         $options = $this->buildRequestConfiguration($options);
 
         try {

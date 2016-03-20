@@ -97,3 +97,10 @@ Below you can find the implemented methods per API:
 ### Case\Subject
 
 - [ ] create
+
+# Release history
+
+* Next release
+  * Breaking change: api id is no longer part of the api base url
+* 1.0.1 Bugfix release
+* 1.0.0 Initial release

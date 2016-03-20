@@ -14,14 +14,14 @@ trait ConfigurationHelperTrait
      * @param array $configuration
      * @return array
      */
-    private function mergeConfigurationWithMinimalConfiguration(array $configuration = [])
+    protected function mergeConfigurationWithMinimalConfiguration(array $configuration = [])
     {
         return array_merge(
             [
                 'apiBaseUrl' => 'http://foobar.com',
                 'username' => 'foo bar',
                 'apiKey' => 'api key',
-                'apiID' => 42
+                'apiId' => 42
             ],
             $configuration
         );

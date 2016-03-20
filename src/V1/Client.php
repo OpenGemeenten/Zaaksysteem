@@ -21,4 +21,15 @@ class Client extends AbstractClient
         return $content['result']['instance'];
     }
 
+    /**
+     * @param array $options
+     * @return array
+     */
+    protected function buildRequestConfiguration(array $options = [])
+    {
+        $options = parent::buildRequestConfiguration($options);
+        $options['headers']['Api-Interface-Id'] = $this->configuration->getApiId();
+        return $options;
+    }
+
 }
