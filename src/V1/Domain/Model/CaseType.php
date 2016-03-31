@@ -14,6 +14,11 @@ final class CaseType
     private $id;
 
     /**
+     * @var string
+     */
+    private $title;
+
+    /**
      * @var \SplObjectStorage
      */
     private $phases;
@@ -34,6 +39,7 @@ final class CaseType
     public function __construct(array $data)
     {
         $this->id = $data['id'];
+        $this->title = $data['title'];
 
         $this->phases = new \SplObjectStorage();
         if (isset($data['phases']) && is_array($data['phases'])) {
@@ -63,6 +69,14 @@ final class CaseType
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
 
     /**
