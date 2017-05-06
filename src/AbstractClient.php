@@ -110,6 +110,27 @@ abstract class AbstractClient
     }
 
     /**
+     * @param string $path
+     * @param array $options
+     * @return string
+     * @throws RequestException
+     */
+    public function download($path, array $options = []) {
+        $url = $this->buildRequestUrl($path);
+        $options = $this->buildRequestConfiguration($options);
+
+        try {
+            $response = $this->client->request('GET', $url, $options);
+            if (!$response instanceof Response) {
+                throw new \Exception('An error occurred while calling the API');
+            }
+            return $response->getBody()->getContents();
+        } catch (\Exception $exception) {
+            throw new RequestException('An error occurred while calling the API');
+        }
+    }
+
+    /**
      * Returns the result from the total response content
      *
      * @param array $content
